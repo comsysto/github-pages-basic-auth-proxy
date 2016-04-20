@@ -37,9 +37,6 @@ def valid_jwt_token(token):
         return False
 
 def check_pass(username, password):
-    # FIXME: REMOVE ME IN PRODUCTION (JUST FOR DEMO)
-    if username == 'bob' and password == '5678':
-        return True
     #
     # First check if already valid JWT Token in Cookie
     #
