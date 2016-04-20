@@ -16,7 +16,8 @@ setup(name='comsysto_github_pages_basic_auth_proxy',
           'validators',
           'colorama',
           'bottle',
-          'simplejson'
+          'simplejson',
+          'python-jose'
       ],
       zip_safe=False,
       entry_points = {

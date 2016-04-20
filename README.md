@@ -88,9 +88,16 @@ cd github-pages-basic-auth-proxy
 sudo python3 setup.py install
 ```
 
-run in background on Port 8881
+Run Proxy
+
+  * proxy that allows only members of the organization to access page: (owner must be an GitHub Organization)
 
 ```
-cs-gh-proxy -e wsgi -u csgruenebe -gh https://comsysto.github.io/github-pages-basic-auth-proxy/086e41eb6ff7a50ad33ad742dbaa2e70b75740c4950fd5bbbdc71981e6fe88e3/ &
+$> cs-gh-proxy -e wsgi -p 8881 --authType onlyGitHubOrgUsers --owner comsysto --repository github-pages-basic-auth-proxy --obfuscator 086e41eb6ff7a50ad33ad742dbaa2e70b75740c4950fd5bbbdc71981e6fe88e3
 ```
 
+  * proxy that allows all GitHub Users to access page: (owner can be GitHub Organization or normal user)
+
+```
+$> cs-gh-proxy -e wsgi -p 8881 --authType allGitHubUsers --owner comsysto --repository github-pages-basic-auth-proxy --obfuscator 086e41eb6ff7a50ad33ad742dbaa2e70b75740c4950fd5bbbdc71981e6fe88e3
+```
