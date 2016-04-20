@@ -1,0 +1,27 @@
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# OS generated files #
+.DS_Store
+ehthumbs.db
+Icon?
+Thumbs.db
+
+# IDE #
+.idea/
+*.swp
+*.iml
+
+# python #
+__pycache__
+peewee.db
+*.pyc
+/dist/
+/*.egg-info
+build/
