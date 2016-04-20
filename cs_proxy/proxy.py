@@ -3,11 +3,12 @@ from bottle import route, request, response, run, hook, abort, redirect, error, 
 import simplejson as json
 import logging
 import datetime
+import requests
+
 
 #
 # HELPERS
 #
-
 def return_json(object, response):
     response.set_header('Content-Type', 'application/json')
     return json.dumps(object)
@@ -17,7 +18,7 @@ def return_json(object, response):
 #
 # BOTTLE APP
 #
-def run_proxy(env):
+def run_proxy(args):
 
     #
     # ERROR HANDLERS
@@ -33,15 +34,20 @@ def run_proxy(env):
     #
     # SPECIAL ENDPOINTS
     #
-    @route('/')
+    @route('/health')
     def hello():
-        return 'hello there'
+        return 'ok'
+
+    @route('/<url>')
+    def proxy_trough(url):
+        return requests.get('{0}{1}'.format(args.githubPagesUrl, url))
+
 
 
     #
     # RUN BY ENVIRONMENT
     #
-    if env == 'wsgi':
+    if args.environment == 'wsgi':
         run(host='localhost', port=8881, debug=True)
     else:
         run(server='cgi')

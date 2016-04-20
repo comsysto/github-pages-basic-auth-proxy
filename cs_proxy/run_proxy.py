@@ -24,4 +24,4 @@ def main():
 
         sys.exit(1)
 
-    run_proxy(args.environment)
+    run_proxy(args)
