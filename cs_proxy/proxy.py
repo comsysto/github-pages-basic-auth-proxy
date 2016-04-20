@@ -26,6 +26,7 @@ def normalize_proxy_url(url):
     return url
 
 def proxy_trough_helper(url):
+    print ('PROXY-GET: {0}'.format(url))
     proxy_response = requests.get(url)
     response.set_header('Last-Modified', proxy_response.headers['Last-Modified'])
     response.set_header('Content-Type',  proxy_response.headers['Content-Type'])
