@@ -1,4 +1,6 @@
-# GitHub Pages Basic Auth Proxy by comSysto
+![](./doc/logo.png)
+
+### GitHub Pages Basic Auth Proxy by comSysto
 
 ## 1. Introduction
 
