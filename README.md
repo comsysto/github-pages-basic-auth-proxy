@@ -12,7 +12,7 @@ A simple python based proxy to secure github pages via a small cloud-proxy-insta
   * If you have a private organization github repository.
   * If you have a `gh-pages` branch in that repository.
   * And if you want to secure the gh-pages page via basic auth, then this proxy is for you.
-  ** Only members of the GitHub organization and users you specify manually will have access
+    * Only members of the GitHub organization and users you specify manually will have access
   
 ### 1.2 What it will do
 
@@ -41,8 +41,9 @@ We will do demo setup for the following scenario:
     
 ### 2.1 Prerequisites
 
-  * You will need nginx and python 3.
-  * optional a ssl certificate
+  * You will need nginx, python 3 and git.
+    * on Ubuntu: `apt-get install git nginx python3-setuptools`
+  * optional a ssl certificate  
 
 ### 2.2 nginx setup
 
@@ -69,14 +70,16 @@ server {
 
 ### 2.3 python proxy setup
 
-The python proxy runs as WSGI standalone process on port 8881.
-
+Install proxy
 ```
 git clone  https://github.com/comsysto/github-pages-basic-auth-proxy.git
 cd github-pages-basic-auth-proxy
 sudo python3 setup.py install
 ```
-run
+
+run in background on Port 8881
+
 ```
-cs-gh-proxy -e wsgi -u csgruenebe -gh https://comsysto.github.io/github-pages-basic-auth-proxy/086e41eb6ff7a50ad33ad742dbaa2e70b75740c4950fd5bbbdc71981e6fe88e3/
+cs-gh-proxy -e wsgi -u csgruenebe -gh https://comsysto.github.io/github-pages-basic-auth-proxy/086e41eb6ff7a50ad33ad742dbaa2e70b75740c4950fd5bbbdc71981e6fe88e3/ &
 ```
+
