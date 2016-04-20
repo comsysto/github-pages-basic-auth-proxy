@@ -1,7 +1,42 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GitHub Page secured by Basic Auth Proxy</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
 <body>
-<h1>Super Secure Page</h1>
+<div class="container">
 
+    <h1>GitHub Page secured by Basic Auth Proxy</h1>
+    <div class="row">
+        <div class="col-md-2 cs-box cs-box-red">
+            If the background of this
+            box is red then proxying main.css is working
+        </div>
+        <div class="col-md-2 col-md-offset-1 cs-box" id="cs-box-green">
+            If the background of this
+            box is green then proxying main.js is working
+        </div>
+        <div class="col-md-2 col-md-offset-1 cs-box">
+            If you see a picture of a notebook below, then
+            proxying of dummy-image.png is working
+            <br>
+            <br>
+            <img src="images/dummy-image.png" class="img-responsive img-thumbnail">
+        </div>
+        <div class="col-md-2 col-md-offset-1 cs-box">
+            If you can download the zip below, then
+            proxying of dummy-archive.zip is working
+            <br>
+            <br>
+            <a href="./dummy-archive.zip">download zip</a>
+        </div>
+    </div>
+</div>
+<script src="js/main.js"></script>
 </body>
 </html>
