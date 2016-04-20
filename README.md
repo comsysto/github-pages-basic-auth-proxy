@@ -6,6 +6,16 @@ A simple python based proxy to secure github pages via a small cloud-proxy-insta
 
 :bangbang: **THIS IS WORK IN PROGRESS. PRE-ALPHA** :bangbang: 
  
+**DEMO**
+
+  * Secured Page by Proxy:
+    * https://my-secure-github-page.comsysto.com/
+    * user: `bob`
+    * pass: `5678`
+  * GitHub Page that is proxied:
+    * https://comsysto.github.io/github-pages-basic-auth-proxy/086e41eb6ff7a50ad33ad742dbaa2e70b75740c4950fd5bbbdc71981e6fe88e3/
+    * (normally you would not tell anyone that URL. But just that you see that these pages are identical)
+ 
 ### 1.1 Who needs this?
 
   * If you have a GitHub organization account with organization members.
@@ -13,6 +23,7 @@ A simple python based proxy to secure github pages via a small cloud-proxy-insta
   * If you have a `gh-pages` branch in that repository.
   * And if you want to secure the gh-pages page via basic auth, then this proxy is for you.
     * Only members of the GitHub organization and users you specify manually will have access
+    * you can specify additional users with passwords that are not github users
   
 ### 1.2 What it will do
 
