@@ -4,7 +4,7 @@
 
 A simple python based proxy to secure github pages via a small cloud-proxy-instance.
 
-:bangbang: **THIS IS WORK IN PROGRESS. PRE-ALPHA** :bangbang: 
+:bangbang: **BETA: THIS IS WORKING BUT NOT RECOMMENDED FOR PRODUCTION USE!** :bangbang: 
  
 **DEMO**
 
@@ -36,7 +36,7 @@ A simple python based proxy to secure github pages via a small cloud-proxy-insta
 ### 1.3 How is this secure?
  
   * Basically `gh-pages` URLs are public
-  * BUT if you create a directory in your `gh-pages` branch which is called `086e41eb6ff7a50ad33ad742dbaa2e70b75740c4950fd5bbbdc71981e6fe88e3` and proxy to this dir, it will be secure as long as no one knows this "obfuscator-dir"
+  * BUT if you create a directory in your `gh-pages` branch which is called e.g. `086e41eb6ff7a50ad33ad742dbaa2e70b75740c4950fd5bbbdc71981e6fe88e3` and proxy to this dir, it will be secure as long as no one knows this **obfuscator**.
 
 ## 2. Installation
 
@@ -44,7 +44,7 @@ We will do demo setup for the following scenario:
   
   * GitHub Page we want to secure: 
     * https://comsysto.github.io/github-pages-basic-auth-proxy/086e41eb6ff7a50ad33ad742dbaa2e70b75740c4950fd5bbbdc71981e6fe88e3/
-    * This is a gh-pages branch of a public repo. In real scenario this would be a private repo and no one could guess the obfuscator-dirname.
+    * This is a gh-pages branch of a public repo. In real scenario this would be a private repo and no one could guess the obfuscator.
     * Contents of gh-pages: https://github.com/comsysto/github-pages-basic-auth-proxy/tree/gh-pages  
   * Proxy-URL we want to use: 
     * https://my-secure-github-page.comsysto.com/
@@ -101,3 +101,8 @@ $> cs-gh-proxy -e wsgi -p 8881 --authType onlyGitHubOrgUsers --owner comsysto --
 ```
 $> cs-gh-proxy -e wsgi -p 8881 --authType allGitHubUsers --owner comsysto --repository github-pages-basic-auth-proxy --obfuscator 086e41eb6ff7a50ad33ad742dbaa2e70b75740c4950fd5bbbdc71981e6fe88e3
 ```
+
+
+# License
+
+Licensed under [MIT License](./LICENSE.md)
