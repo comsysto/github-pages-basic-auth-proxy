@@ -1,28 +1,31 @@
 # GitHhub Pages Basic Auth Proxy by comSysto
 
 ## 1. Introduction
+
 A simple python based proxy to secure github pages via a small cloud-proxy-instance.
 
-:bangbang: THIS IS WORK IN PROGRESS. PRE-ALPHA :bangbang: 
+:bangbang: **THIS IS WORK IN PROGRESS. PRE-ALPHA** :bangbang: 
  
 ### 1.1 Who needs this?
 
-If you have a private github repository.
-If you have a `gh-pages` branch in that repository.
-And if you want to secure the gh-pages page via basic auth, then this proxy is for you
-
+  * If you have a GitHub organization account with organization members.
+  * If you have a private organization github repository.
+  * If you have a `gh-pages` branch in that repository.
+  * And if you want to secure the gh-pages page via basic auth, then this proxy is for you.
+  ** Only members of the GitHub organization and users you specify manually will have access
+  
 ### 1.2 What it will do
 
 ![](./doc/basic-proxy.png)
 
   * Proxy between GitHub Pages and User
-  * Ask for Authentication
+  * Ask for Authentication (github credentials)
   * Only proxy through if user is member of GitHub Organization or in list of users allowed to access
   
 ### 1.3 How is this secure?
  
   * Basically `gh-pages` URLs are public
-  * BUT if you create a directory in your `gh-pages` branch which is called `ibjsda67d79gds8a9sd88` and proxy to this dir, it will be secure as long as no one knows this "obfuscator-dir"
+  * BUT if you create a directory in your `gh-pages` branch which is called `086e41eb6ff7a50ad33ad742dbaa2e70b75740c4950fd5bbbdc71981e6fe88e3` and proxy to this dir, it will be secure as long as no one knows this "obfuscator-dir"
 
 ## 2. Installation
 
@@ -30,15 +33,16 @@ We will do demo setup for the following scenario:
   
   * GitHub Page we want to secure: 
     * https://comsysto.github.io/github-pages-basic-auth-proxy/086e41eb6ff7a50ad33ad742dbaa2e70b75740c4950fd5bbbdc71981e6fe88e3/
-    * (this is a gh-pages branch of a public repo. In real scenario this would be a private repo)
-    * Contents of gh-pages: https://github.com/...  
+    * This is a gh-pages branch of a public repo. In real scenario this would be a private repo and no one could guess the obfuscator-dirname.
+    * Contents of gh-pages: https://github.com/comsysto/github-pages-basic-auth-proxy/tree/gh-pages  
   * Proxy-URL we want to use: 
     * https://my-secure-github-page.comsysto.com/
-    * This is a `ec2.micro` Instance on AWS.
+    * This is a `ec2.micro` Instance on AWS which is configured as described below.
     
 ### 2.1 Prerequisites
 
-  * You will need nginx and python.
+  * You will need nginx and python 3.
+  * optional a ssl certificate
 
 ### 2.2 nginx setup
 
