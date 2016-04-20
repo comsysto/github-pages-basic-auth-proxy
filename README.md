@@ -68,6 +68,11 @@ server {
 The python proxy runs as WSGI standalone process on port 8881.
 
 ```
-python run_proxy_prod.py &
+git clone  https://github.com/comsysto/github-pages-basic-auth-proxy.git
+cd github-pages-basic-auth-proxy
+sudo python3 setup.py install
 ```
-
+run
+```
+cs-gh-proxy -e wsgi -u csgruenebe -gh https://comsysto.github.io/github-pages-basic-auth-proxy/086e41eb6ff7a50ad33ad742dbaa2e70b75740c4950fd5bbbdc71981e6fe88e3/
+```

@@ -41,7 +41,7 @@ def run_proxy(env):
     #
     # RUN BY ENVIRONMENT
     #
-    if env == 'dev' or env == 'local':
+    if env == 'wsgi':
         run(host='localhost', port=8881, debug=True)
     else:
         run(server='cgi')
