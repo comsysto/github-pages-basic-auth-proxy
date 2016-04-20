@@ -29,9 +29,14 @@ A simple python based proxy to secure github pages via a small cloud-proxy-insta
 
 ![](./doc/basic-proxy.png)
 
-  * Proxy between GitHub Pages and User
+  * Proxy between GitHub Pages and User (Only GET requests)
   * Ask for Authentication (github credentials)
+    * either GitHub username and password
+    * Or GitHub username and access_token
   * Only proxy through if user is member of GitHub Organization or normal GitHub user (depends on how you run proxy)
+  * To not have to call github api on every request we authenticate once and a [JWT Token](https://jwt.io/) is generated and stored in a cookie
+    * the JWT Token is valid for 4 hours.
+    * After the Token has expired or the cookie is removed you will have to perform Authentication again.
   
 ### 1.3 How is this secure?
  
