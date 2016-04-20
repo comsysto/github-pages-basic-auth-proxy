@@ -6,7 +6,7 @@ A simple python based proxy to secure github pages via a small cloud-proxy-insta
 
 :bangbang: **BETA: THIS IS WORKING BUT NOT RECOMMENDED FOR PRODUCTION USE!** :bangbang: 
  
-**DEMO**
+### 1.1 Demo
 
   * Secured Page by Proxy:
     * https://my-secure-github-page.comsysto.com/
@@ -17,7 +17,7 @@ A simple python based proxy to secure github pages via a small cloud-proxy-insta
     * https://comsysto.github.io/github-pages-basic-auth-proxy/086e41eb6ff7a50ad33ad742dbaa2e70b75740c4950fd5bbbdc71981e6fe88e3/
     * (normally you would not tell anyone that URL. But just that you see that these pages are identical)
  
-### 1.1 Who needs this?
+### 1.2 Who needs this?
 
   * If you have a GitHub organization account with organization members.
   * If you have a private organization github repository.
@@ -25,7 +25,7 @@ A simple python based proxy to secure github pages via a small cloud-proxy-insta
   * And if you want to secure the gh-pages page via basic auth, then this proxy is for you.
     * Only members of the GitHub organization OR normal GitHub users will have access
   
-### 1.2 What it will do
+### 1.3 What it will do
 
 ![](./doc/basic-proxy.png)
 
@@ -38,10 +38,11 @@ A simple python based proxy to secure github pages via a small cloud-proxy-insta
     * the JWT Token is valid for 4 hours.
     * After the Token has expired or the cookie is removed you will have to perform Authentication again.
   
-### 1.3 How is this secure?
+### 1.4 Is this really secure?
  
-  * Basically `gh-pages` URLs are public
-  * BUT if you create a directory in your `gh-pages` branch which is called e.g. `086e41eb6ff7a50ad33ad742dbaa2e70b75740c4950fd5bbbdc71981e6fe88e3` and proxy to this dir, it will be secure as long as no one knows this **obfuscator**.
+  * Basically `gh-pages` URLs are public. But if you use a private repository you can only **guess** the actual URLs. 
+  * If you create a directory in your `gh-pages` branch which is called e.g. `086e41eb6ff7a50ad33ad742dbaa2e70b75740c4950fd5bbbdc71981e6fe88e3` and proxy to this dir, it will be secure as long as no one knows **obfuscator** (you should keep it secret).
+  * You proxy to https (TLS) so no man in the middle attack could get a hold of the obfuscator.
 
 ## 2. Installation
 
