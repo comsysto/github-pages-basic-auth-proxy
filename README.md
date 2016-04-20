@@ -10,8 +10,9 @@ A simple python based proxy to secure github pages via a small cloud-proxy-insta
 
   * Secured Page by Proxy:
     * https://my-secure-github-page.comsysto.com/
-    * user: `bob`
-    * pass: `5678`
+    * You can login on the page with your GitHub Username and [personal access token](https://help.github.com/articles/creating-an-access-token-for-command-line-use/) (which can have no scopes)
+    * The proxy is running on this instance with the following parameters (you can see below what that means)
+      * `cs-gh-proxy -e wsgi -p 8881 --authType allGitHubUsers --owner comsysto --repository github-pages-basic-auth-proxy --obfuscator 086e41eb6ff7a50ad33ad742dbaa2e70b75740c4950fd5bbbdc71981e6fe88e3 &`
   * GitHub Page that is proxied:
     * https://comsysto.github.io/github-pages-basic-auth-proxy/086e41eb6ff7a50ad33ad742dbaa2e70b75740c4950fd5bbbdc71981e6fe88e3/
     * (normally you would not tell anyone that URL. But just that you see that these pages are identical)
@@ -22,8 +23,7 @@ A simple python based proxy to secure github pages via a small cloud-proxy-insta
   * If you have a private organization github repository.
   * If you have a `gh-pages` branch in that repository.
   * And if you want to secure the gh-pages page via basic auth, then this proxy is for you.
-    * Only members of the GitHub organization and users you specify manually will have access
-    * you can specify additional users with passwords that are not github users
+    * Only members of the GitHub organization OR normal GitHub users will have access
   
 ### 1.2 What it will do
 
@@ -31,7 +31,7 @@ A simple python based proxy to secure github pages via a small cloud-proxy-insta
 
   * Proxy between GitHub Pages and User
   * Ask for Authentication (github credentials)
-  * Only proxy through if user is member of GitHub Organization or in list of users allowed to access
+  * Only proxy through if user is member of GitHub Organization or normal GitHub user (depends on how you run proxy)
   
 ### 1.3 How is this secure?
  
@@ -53,7 +53,7 @@ We will do demo setup for the following scenario:
 ### 2.1 Prerequisites
 
   * You will need nginx, python 3 and git.
-    * on Ubuntu: `apt-get install git nginx python3-setuptools`
+    * on Ubuntu: `apt-get install git nginx python3-setuptools build-essential python3-dev`
   * optional a ssl certificate  
 
 ### 2.2 nginx setup
