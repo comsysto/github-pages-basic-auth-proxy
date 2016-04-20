@@ -1,4 +1,4 @@
-# GitHhub Pages Basic Auth Proxy by comSysto
+# GitHub Pages Basic Auth Proxy by comSysto
 
 ## 1. Introduction
 
