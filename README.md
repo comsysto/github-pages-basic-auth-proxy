@@ -1,10 +1,12 @@
 ![](./doc/logo.png)
 
-### GitHub Pages Basic Auth Proxy by comSysto
+#### GitHub Pages Basic Auth Proxy by comSysto
+
+A simple python based proxy to secure github pages with basic auth via a small cloud-proxy-instance.
+Basic Auth checks against GitHub API. This little piece of software is brought to you by comSysto.
+*comSysto is not a representative of GitHub. GitHub and the GitHub logos are Trademarks of GitHub inc.* 
 
 ## 1. Introduction
-
-A simple python based proxy to secure github pages via a small cloud-proxy-instance.
 
 :bangbang: **BETA: THIS IS WORKING BUT NOT RECOMMENDED FOR PRODUCTION USE!** :bangbang: 
  
