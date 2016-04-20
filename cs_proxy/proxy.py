@@ -25,6 +25,13 @@ def normalize_proxy_url(url):
         return '{0}index.html'.format(url)
     return url
 
+def proxy_trough_helper(url):
+    proxy_response = requests.get(url)
+    response.set_header('Last-Modified', proxy_response.headers['Last-Modified'])
+    response.set_header('Content-Type',  proxy_response.headers['Content-Type'])
+    response.set_header('Expires',       proxy_response.headers['Expires'])
+    return proxy_response
+
 
 #
 # BOTTLE APP
@@ -50,15 +57,15 @@ def run_proxy(args):
         return 'ok'
 
 
-    @route('/<url>')
+    @route('/<url:re:.+>')
     @auth_basic(check_pass)
     def proxy_trough(url):
-        return requests.get('{0}{1}'.format(args.githubPagesUrl, normalize_proxy_url(url)))
+        return proxy_trough_helper('{0}{1}'.format(args.githubPagesUrl, normalize_proxy_url(url)))
 
     @route('/')
     @auth_basic(check_pass)
     def proxy_trough_root_page():
-        return requests.get('{0}{1}'.format(args.githubPagesUrl, '/index.html'))
+        return proxy_trough_helper('{0}{1}'.format(args.githubPagesUrl, '/index.html'))
 
 
     #
