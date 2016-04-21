@@ -6,6 +6,12 @@ A simple python based proxy to secure github pages with basic auth via a small c
 Basic Auth checks against GitHub API. This little piece of software is brought to you by comSysto.
 *comSysto is not a representative of GitHub. GitHub and the GitHub logos are Trademarks of GitHub inc.* 
 
+**TOC**
+  * [1. Introduction](#1-introduction)
+  * [2. Installation](#2-installation)
+  * [3. Roadmap](#3-roadmap)
+  * [4. License](#4-license)
+
 ## 1. Introduction
 
 :bangbang: **BETA: THIS IS WORKING BUT NOT RECOMMENDED FOR PRODUCTION USE!** :bangbang: 
@@ -118,6 +124,17 @@ $> cs-gh-proxy -e wsgi -p 8881 --authType allGitHubUsers --owner comsysto --repo
     * put run command (see above) in script
     * run as daemon with `/usr/local/sbin/daemonize /opt/run-gh-proxy.sh`
 
-# License
+# 3. Roadmap
+
+  * Provide oAuth instead of Basic Auth
+  * Enable CORS
+  * Enable on-the-fly GZIP compression
+  * Enable caching (maybe replace internal proxy mechanism with WSGIproxy)
+  * Real logging
+  * Provide Ubuntu init Scripts
+  * Provide Heroku easy install
+
+
+# 4. License
 
 Licensed under [MIT License](./LICENSE.md)
