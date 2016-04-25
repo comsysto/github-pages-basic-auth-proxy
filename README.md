@@ -93,7 +93,7 @@ Now your app should be up and running.
 
   * You can access the health check `https://protected-foo-21086.herokuapp.com/health`
   * Or directly use the proxy and enter credentials `https://protected-foo-21086.herokuapp.com/` 
-  * An successfully deployed app log should look like this:
+  * A successfully deployed app log should look like this:
     * ![](./doc/heroku-logs.png)
 
 
