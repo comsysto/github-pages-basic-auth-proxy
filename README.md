@@ -122,7 +122,9 @@ $> cs-gh-proxy -e wsgi -p 8881 --authType allGitHubUsers --owner comsysto --repo
     * first [install daemonize](http://software.clapper.org/daemonize/)
     * now create script `/opt/run-gh-proxy.sh`
     * put run command (see above) in script
-    * run as daemon with `/usr/local/sbin/daemonize /opt/run-gh-proxy.sh`
+    * run as daemon with `/usr/local/sbin/daemonize -p /var/run/cs-gh-proxy.pid -l /var/run/cs-gh-proxy.lock /opt/run-gh-proxy.sh`
+      * Now you can write some scripts to check for pidfile or port
+      * lockfile ensures that there will only be a single instance
 
 # 3. Roadmap
 
