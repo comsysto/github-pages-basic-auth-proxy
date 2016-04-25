@@ -54,7 +54,42 @@ Basic Auth checks against GitHub API. This little piece of software is brought t
   * If you create a directory in your `gh-pages` branch which is called e.g. `086e41eb6ff7a50ad33ad742dbaa2e70b75740c4950fd5bbbdc71981e6fe88e3` and proxy to this dir, it will be secure as long as no one knows **obfuscator** (you should keep it secret).
   * You proxy to https (TLS) so no man in the middle attack could get a hold of the obfuscator.
 
-## 2. Installation
+## 2. Installation on Heroku
+
+
+Create a heroku app and clone the git repo. ([Toolbelt is installed](https://toolbelt.heroku.com/) and you are logged in)
+
+```
+$> cd ~/
+$> heroku create
+# Creating app... done, stack is cedar-14
+# https://protected-foo-21086.herokuapp.com/ | https://git.heroku.com/protected-foo-21086.git
+$> git clone https://git.heroku.com/protected-foo-21086.git heroku-gh-proxy
+```
+
+You now have a folder `heroku-gh-proxy` in your homedir that contains the deployed app (currently empty).
+Next we clone the GitHub Pages Proxy and extract the latest snapshot into `heroku-gh-proxy` (absolute path needed)  
+
+```
+$> cd ~/
+$> git clone https://github.com/comsysto/github-pages-basic-auth-proxy.git
+$> cd github-pages-basic-auth-proxy
+$> git checkout-index -a -f --prefix=/Users/bg/heroku-gh-proxy/  # absolute path with trailing slash!
+```
+
+Now change the `Procfile` to your repository and obfuscator settings and push.
+
+```
+$> cd ~/heroku-gh-proxy
+git add . -A
+git commit -m "init"
+git push
+```
+
+Now your app should be up and running.
+
+
+## 2. Installation (Manual)
 
 We will do demo setup for the following scenario:
   
