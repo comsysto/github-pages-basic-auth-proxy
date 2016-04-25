@@ -180,7 +180,7 @@ $> cs-gh-proxy -e wsgi -p 8881 --authType allGitHubUsers --owner comsysto --repo
   * Enable caching (maybe replace internal proxy mechanism with WSGIproxy)
   * Real logging
   * Provide Ubuntu init Scripts
-  * Provide Heroku easy install
+  * :white_check_mark: Provide Heroku easy install
 
 
 # 5. License
