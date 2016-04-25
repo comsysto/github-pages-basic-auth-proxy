@@ -88,6 +88,11 @@ git push
 
 Now your app should be up and running.
 
+  * You can access the health check `https://protected-foo-21086.herokuapp.com/health`
+  * Or directly use the proxy and enter credentials `https://protected-foo-21086.herokuapp.com/` 
+
+
+
 
 ## 2. Installation (Manual)
 
