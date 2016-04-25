@@ -8,9 +8,10 @@ Basic Auth checks against GitHub API. This little piece of software is brought t
 
 **TOC**
   * [1. Introduction](#1-introduction)
-  * [2. Installation](#2-installation)
-  * [3. Roadmap](#3-roadmap)
-  * [4. License](#4-license)
+  * [2. Installation on Heroku](#2-installation-on-heroku)
+  * [3. Installation on AWS](#3-installation-on-aws)
+  * [4. Roadmap](#4-roadmap)
+  * [5. License](#5-license)
 
 ## 1. Introduction
 
@@ -54,7 +55,52 @@ Basic Auth checks against GitHub API. This little piece of software is brought t
   * If you create a directory in your `gh-pages` branch which is called e.g. `086e41eb6ff7a50ad33ad742dbaa2e70b75740c4950fd5bbbdc71981e6fe88e3` and proxy to this dir, it will be secure as long as no one knows **obfuscator** (you should keep it secret).
   * You proxy to https (TLS) so no man in the middle attack could get a hold of the obfuscator.
 
-## 2. Installation
+## 2. Installation on Heroku
+
+[![](./doc/heroku-logo.png)](https://dashboard.heroku.com/)
+
+Create a heroku app and clone the git repo. ([Toolbelt is installed](https://toolbelt.heroku.com/) and you are logged in)
+
+```
+$> cd ~/
+$> heroku create
+# Creating app... done, stack is cedar-14
+# https://protected-foo-21086.herokuapp.com/ | https://git.heroku.com/protected-foo-21086.git
+$> git clone https://git.heroku.com/protected-foo-21086.git heroku-gh-proxy
+```
+
+You now have a folder `heroku-gh-proxy` in your homedir that contains the deployed app (currently empty).
+Next we clone the GitHub Pages Proxy and extract the latest snapshot into `heroku-gh-proxy` (absolute path needed)  
+
+```
+$> cd ~/
+$> git clone https://github.com/comsysto/github-pages-basic-auth-proxy.git
+$> cd github-pages-basic-auth-proxy
+$> git checkout-index -a -f --prefix=/Users/bg/heroku-gh-proxy/  # absolute path with trailing slash!
+```
+
+Now change the `Procfile` to your repository and obfuscator settings and push.
+
+```
+$> cd ~/heroku-gh-proxy
+vim Procfile # change your settings
+git add . -A
+git commit -m "init"
+git push
+```
+
+Now your app should be up and running.
+
+  * You can access the health check `https://protected-foo-21086.herokuapp.com/health`
+  * Or directly use the proxy and enter credentials `https://protected-foo-21086.herokuapp.com/` 
+  * A successfully deployed app log should look like this:
+    * ![](./doc/heroku-logs.png)
+
+
+
+## 3. Installation on AWS
+
+[![](./doc/aws-logo.png)](https://aws.amazon.com/)
 
 We will do demo setup for the following scenario:
   
@@ -66,13 +112,13 @@ We will do demo setup for the following scenario:
     * https://my-secure-github-page.comsysto.com/
     * This is a `ec2.micro` Instance on AWS which is configured as described below.
     
-### 2.1 Prerequisites
+### 3.1 Prerequisites
 
   * You will need nginx, python 3 and git.
     * on Ubuntu: `apt-get install git nginx python3-setuptools build-essential python3-dev`
   * optional a ssl certificate  
 
-### 2.2 nginx setup
+### 3.2 nginx setup
 
 We need some kind of vhost with SSL that proxies everything through to our python proxy.
 
@@ -95,7 +141,7 @@ server {
 }
 ```
 
-### 2.3 python proxy setup
+### 3.3 python proxy setup
 
 Install proxy
 ```
@@ -126,7 +172,7 @@ $> cs-gh-proxy -e wsgi -p 8881 --authType allGitHubUsers --owner comsysto --repo
       * Now you can write some scripts to check for pidfile or port
       * lockfile ensures that there will only be a single instance
 
-# 3. Roadmap
+# 4. Roadmap
 
   * Provide oAuth instead of Basic Auth
   * Enable CORS
@@ -137,6 +183,6 @@ $> cs-gh-proxy -e wsgi -p 8881 --authType allGitHubUsers --owner comsysto --repo
   * Provide Heroku easy install
 
 
-# 4. License
+# 5. License
 
 Licensed under [MIT License](./LICENSE.md)

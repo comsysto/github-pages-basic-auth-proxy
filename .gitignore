@@ -25,3 +25,6 @@ peewee.db
 /dist/
 /*.egg-info
 build/
+
+# heroku
+venv/
