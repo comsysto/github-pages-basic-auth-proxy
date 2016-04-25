@@ -8,9 +8,10 @@ Basic Auth checks against GitHub API. This little piece of software is brought t
 
 **TOC**
   * [1. Introduction](#1-introduction)
-  * [2. Installation](#2-installation)
-  * [3. Roadmap](#3-roadmap)
-  * [4. License](#4-license)
+  * [2. Installation on Heroku](#2-installation-on-heroku)
+  * [3. Installation on AWS](#3-installation-on-aws)
+  * [4. Roadmap](#4-roadmap)
+  * [5. License](#5-license)
 
 ## 1. Introduction
 
@@ -81,6 +82,7 @@ Now change the `Procfile` to your repository and obfuscator settings and push.
 
 ```
 $> cd ~/heroku-gh-proxy
+vim Procfile # change your settings
 git add . -A
 git commit -m "init"
 git push
@@ -90,11 +92,12 @@ Now your app should be up and running.
 
   * You can access the health check `https://protected-foo-21086.herokuapp.com/health`
   * Or directly use the proxy and enter credentials `https://protected-foo-21086.herokuapp.com/` 
+  * An successfully deployed app log should look like this:
+    * ![](./doc/heroku-log.png)
 
 
 
-
-## 2. Installation (Manual)
+## 3. Installation on AWS
 
 We will do demo setup for the following scenario:
   
@@ -106,13 +109,13 @@ We will do demo setup for the following scenario:
     * https://my-secure-github-page.comsysto.com/
     * This is a `ec2.micro` Instance on AWS which is configured as described below.
     
-### 2.1 Prerequisites
+### 3.1 Prerequisites
 
   * You will need nginx, python 3 and git.
     * on Ubuntu: `apt-get install git nginx python3-setuptools build-essential python3-dev`
   * optional a ssl certificate  
 
-### 2.2 nginx setup
+### 3.2 nginx setup
 
 We need some kind of vhost with SSL that proxies everything through to our python proxy.
 
@@ -135,7 +138,7 @@ server {
 }
 ```
 
-### 2.3 python proxy setup
+### 3.3 python proxy setup
 
 Install proxy
 ```
@@ -166,7 +169,7 @@ $> cs-gh-proxy -e wsgi -p 8881 --authType allGitHubUsers --owner comsysto --repo
       * Now you can write some scripts to check for pidfile or port
       * lockfile ensures that there will only be a single instance
 
-# 3. Roadmap
+# 4. Roadmap
 
   * Provide oAuth instead of Basic Auth
   * Enable CORS
@@ -177,6 +180,6 @@ $> cs-gh-proxy -e wsgi -p 8881 --authType allGitHubUsers --owner comsysto --repo
   * Provide Heroku easy install
 
 
-# 4. License
+# 5. License
 
 Licensed under [MIT License](./LICENSE.md)
