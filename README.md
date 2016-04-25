@@ -49,11 +49,19 @@ Basic Auth checks against GitHub API. This little piece of software is brought t
     * the JWT Token is valid for 4 hours.
     * After the Token has expired or the cookie is removed you will have to perform Authentication again.
   
-### 1.4 Is this really secure?
+### 1.4 Is it really secure?
  
   * Basically `gh-pages` URLs are public. But if you use a private repository you can only **guess** the actual URLs. 
   * If you create a directory in your `gh-pages` branch which is called e.g. `086e41eb6ff7a50ad33ad742dbaa2e70b75740c4950fd5bbbdc71981e6fe88e3` and proxy to this dir, it will be secure as long as no one knows **obfuscator** (you should keep it secret).
   * You proxy to https (TLS) so no man in the middle attack could get a hold of the obfuscator.
+
+### 1.5 Is it fast?
+ 
+  * The short answer is: meeeeh
+  * Currently there is no real good proxy implementation in place that would cache files.
+  * So for every GET request you have internal GET calls to github pages whose responses are directly returned to the user.
+  * At least the Authentication is fast and optimized via JWT Auth Cookie. That reduces the auth calls on the github API.
+
 
 ## 2. Installation on Heroku
 
