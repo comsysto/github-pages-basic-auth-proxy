@@ -57,6 +57,7 @@ Basic Auth checks against GitHub API. This little piece of software is brought t
 
 ## 2. Installation on Heroku
 
+[![](./doc/heroku-logo)](https://dashboard.heroku.com/)
 
 Create a heroku app and clone the git repo. ([Toolbelt is installed](https://toolbelt.heroku.com/) and you are logged in)
 
@@ -98,6 +99,8 @@ Now your app should be up and running.
 
 
 ## 3. Installation on AWS
+
+[![](./doc/aws-logo)](https://aws.amazon.com/)
 
 We will do demo setup for the following scenario:
   
