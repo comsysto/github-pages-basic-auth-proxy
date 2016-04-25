@@ -57,7 +57,7 @@ Basic Auth checks against GitHub API. This little piece of software is brought t
 
 ## 2. Installation on Heroku
 
-[![](./doc/heroku-logo)](https://dashboard.heroku.com/)
+[![](./doc/heroku-logo.png)](https://dashboard.heroku.com/)
 
 Create a heroku app and clone the git repo. ([Toolbelt is installed](https://toolbelt.heroku.com/) and you are logged in)
 
@@ -94,13 +94,13 @@ Now your app should be up and running.
   * You can access the health check `https://protected-foo-21086.herokuapp.com/health`
   * Or directly use the proxy and enter credentials `https://protected-foo-21086.herokuapp.com/` 
   * An successfully deployed app log should look like this:
-    * ![](./doc/heroku-log.png)
+    * ![](./doc/heroku-logs.png)
 
 
 
 ## 3. Installation on AWS
 
-[![](./doc/aws-logo)](https://aws.amazon.com/)
+[![](./doc/aws-logo.png)](https://aws.amazon.com/)
 
 We will do demo setup for the following scenario:
   
