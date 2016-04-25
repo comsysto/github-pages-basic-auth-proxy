@@ -21,5 +21,5 @@ setup(name='comsysto_github_pages_basic_auth_proxy',
       ],
       zip_safe=False,
       entry_points = {
-          'console_scripts': ['cs-gh-proxy=cs_proxy.run_proxy:main'],
+          'console_scripts': ['cs-gh-proxy=cs_proxy.proxy:main'],
       })
