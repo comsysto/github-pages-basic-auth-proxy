@@ -166,3 +166,11 @@ $> cs-gh-proxy -e wsgi -p 8881 --authType allGitHubUsers --owner comsysto --repo
 # 5. License
 
 Licensed under [MIT License](./LICENSE.md)
+
+colors: 
+```
+türkis   #1e9dcc  #d2ebf5  
+green    #99d100  #ebf6cc
+orange   #e67800
+blue     #1c61b3
+```
