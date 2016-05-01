@@ -2,6 +2,9 @@
 
 #### GitHub Pages Basic Auth Proxy by comSysto
 
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
+
 A simple python based proxy to secure github pages with basic auth via a small cloud-proxy-instance.
 Basic Auth checks against GitHub API. This little piece of software is brought to you by comSysto.
 *comSysto is not a representative of GitHub. GitHub and the GitHub logos are Trademarks of GitHub inc.* 
@@ -65,45 +68,13 @@ Basic Auth checks against GitHub API. This little piece of software is brought t
 
 ## 2. Installation on Heroku
 
-[![](./doc/heroku-logo.png)](https://dashboard.heroku.com/)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-Create a heroku app and clone the git repo. ([Toolbelt is installed](https://toolbelt.heroku.com/) and you are logged in)
+You can automatically setup the heroku instance of the proxy by clicking the button above and configure it via `env` vars.
+You need to specify `authType`, `owner`, `repository` and `obfuscator`.
 
-```
-$> cd ~/
-$> heroku create
-# Creating app... done, stack is cedar-14
-# https://protected-foo-21086.herokuapp.com/ | https://git.heroku.com/protected-foo-21086.git
-$> git clone https://git.heroku.com/protected-foo-21086.git heroku-gh-proxy
-```
-
-You now have a folder `heroku-gh-proxy` in your homedir that contains the deployed app (currently empty).
-Next we clone the GitHub Pages Proxy and extract the latest snapshot into `heroku-gh-proxy` (absolute path needed)  
-
-```
-$> cd ~/
-$> git clone https://github.com/comsysto/github-pages-basic-auth-proxy.git
-$> cd github-pages-basic-auth-proxy
-$> git checkout-index -a -f --prefix=/Users/bg/heroku-gh-proxy/  # absolute path with trailing slash!
-```
-
-Now change the `Procfile` to your repository and obfuscator settings and push.
-
-```
-$> cd ~/heroku-gh-proxy
-vim Procfile # change your settings
-git add . -A
-git commit -m "init"
-git push
-```
-
-Now your app should be up and running.
-
-  * You can access the health check `https://protected-foo-21086.herokuapp.com/health`
-  * Or directly use the proxy and enter credentials `https://protected-foo-21086.herokuapp.com/` 
-  * A successfully deployed app log should look like this:
-    * ![](./doc/heroku-logs.png)
-
+IFrame Test:
+<iframe width="560" height="315" src="https://comsysto.com" frameborder="0" allowfullscreen></iframe>
 
 
 ## 3. Installation on AWS

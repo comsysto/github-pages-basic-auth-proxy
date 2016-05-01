@@ -23,7 +23,7 @@ def main():
     parser.add_argument("-ghr", "--repository", help='the repository name.')
     parser.add_argument("-obf", "--obfuscator", help='the subfolder-name in gh-pages branch used as obfuscator')
     parser.add_argument("-p", "--port", help='the port to run proxy e.g. 8881')
-    parser.add_argument("-a", "--authType", help='how should users auth.', choices=['allGitHubUsers', 'onlyGitHubOrgUsers'] )
+    parser.add_argument("-a", "--authType", help='how should users auth.', choices=['allGitHubUsers', 'onlyGitHubOrgUsers'], required=False )
 
 
     args = parser.parse_args()
@@ -37,6 +37,15 @@ def main():
         print ('')
 
         sys.exit(1)
+
+    if args.environment == 'heroku':
+        args = parser.parse_args(['--environment', 'heroku',
+                                  '--port',       os.environ.get("PORT", 5000),
+                                  '--authType',   os.environ.get("PROXY_AUTH_TYPE", 'allGitHubUsers'),
+                                  '--owner',      os.environ.get("GITHUB_REPOSITORY_OWNER", 'comsysto'),
+                                  '--repository', os.environ.get("GITHUB_REPOSITORY_NAME", 'github-pages-basic-auth-proxy'),
+                                  '--obfuscator', os.environ.get("GITHUB_REPOSITORY_OBFUSCATOR", '086e41eb6ff7a50ad33ad742dbaa2e70b75740c4950fd5bbbdc71981e6fe88e3')
+                                 ])
 
     run_proxy(args)
 
@@ -136,6 +145,10 @@ def run_proxy(args):
     def hello():
         return 'ok'
 
+    @route('/install-success')
+    def hello():
+        return 'The Auth Basic GitHub Pages Proxy was installed successfully.'
+
     #
     # make args available in auth callback
     #
@@ -159,7 +172,7 @@ def run_proxy(args):
     if args.environment == 'wsgi':
         run(host='localhost', port=args.port, debug=True)
     if args.environment == 'heroku':
-        run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
+        run(host="0.0.0.0", port=int(args.port))
     else:
         run(server='cgi')
 

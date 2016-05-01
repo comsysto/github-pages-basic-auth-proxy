@@ -4,5 +4,24 @@
   "image": "heroku/python",
   "repository": "https://github.com/comsysto/github-pages-basic-auth-proxy",
   "keywords": ["python", "gh-pages" ],
-  "addons": [  ]
+  "success_url": "/install-success",
+  "addons": [  ],
+  "env": {
+    "PROXY_AUTH_TYPE": {
+      "description": "The authType. allGitHubUsers or onlyGitHubOrgUsers.",
+      "value": "allGitHubUsers"
+    },
+    "GITHUB_REPOSITORY_OWNER": {
+      "description": "The owner of the GitHub repository you want to proxy",
+      "value": "comsysto"
+    },
+    "GITHUB_REPOSITORY_NAME": {
+      "description": "The name of the GitHub repository you want to proxy",
+      "value": "github-pages-basic-auth-proxy"
+    },
+    "GITHUB_REPOSITORY_OBFUSCATOR": {
+      "description": "The name of the GitHub repository you want to proxy",
+      "value": "086e41eb6ff7a50ad33ad742dbaa2e70b75740c4950fd5bbbdc71981e6fe88e3"
+    }
+  }
 }
