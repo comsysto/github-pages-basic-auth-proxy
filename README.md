@@ -14,7 +14,7 @@ Basic Auth checks against GitHub API. This little piece of software is brought t
  
 ![](./doc/basic-proxy.png)
 
-### 1.1 Demo
+### Demo
 
 
 | Secured Page by Auth Basic Proxy | Insecure plain GitHub Pages URL |
