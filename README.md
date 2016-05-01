@@ -54,9 +54,9 @@ Basic Auth checks against GitHub API.
 <hr>
 
   * After you clicked on the view-button you should see the *Installation Success* page. <br>&nbsp;
-  * ![](./doc/heroku-deploy-success.png) <br>&nbsp;
+    * ![](./doc/heroku-deploy-success.png) <br>&nbsp;
   * When you configured the parameters correctly you should see a page like this <br>&nbsp;
-  * ![](./doc/heroku-install-success.png)
+    * ![](./doc/heroku-install-success.png)
 
 <br><br><br><br>
 
