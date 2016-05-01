@@ -5,7 +5,7 @@ A simple python based proxy to secure github pages with basic auth via a small c
 Basic Auth checks against GitHub API. 
 
  
-![](https://comsysto.github.io/github-pages-basic-auth-proxy/public/basic-proxy.png)
+![](https://comsysto.github.io/github-pages-basic-auth-proxy/public/basic-proxy.svg)
 
 ### Demo
 
