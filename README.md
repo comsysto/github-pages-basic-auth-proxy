@@ -43,7 +43,7 @@ Basic Auth checks against GitHub API.
 ### ![](./doc/step-bubble-3.png) Deploy Auth Basic Proxy to Heroku
 <hr>
 
-  * You can automatically setup the heroku instance of the proxy by clicking the deploy button.<br>&nbsp;
+  * You can automatically setup the heroku instance of the proxy by clicking the deploy button.
 
 <p align="center">
   <a href="https://heroku.com/deploy"><img src="https://www.herokucdn.com/deploy/button.svg" height="50" /></a>
