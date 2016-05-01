@@ -1,16 +1,9 @@
 [![](./doc/logo.png)](https://github.com/comsysto/github-pages-basic-auth-proxy)
 
 #### GitHub Pages Auth Basic Proxy by comSysto
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
-
-## 1. Introduction
-
 A simple python based proxy to secure github pages with basic auth via a small cloud-proxy-instance.
-Basic Auth checks against GitHub API. This little piece of software is brought to you by comSysto.
-*comSysto is not a representative of GitHub. GitHub and the GitHub logos are Trademarks of GitHub inc.* 
+Basic Auth checks against GitHub API. 
 
-![](./doc/beta-warning.png)
  
 ![](./doc/basic-proxy.png)
 
@@ -24,37 +17,75 @@ Basic Auth checks against GitHub API. This little piece of software is brought t
 | Or You can login with your GitHub Username and a [personal access token](https://help.github.com/articles/creating-an-access-token-for-command-line-use/) as password. The token does not need any scopes.| |
 
 
-## 2. Installation on Heroku
+## Installation on Heroku
 
-#### ![](./doc/step-bubble-1.png) Create the Obfuscator directory in your gh-pages branch
+![](./doc/beta-warning.png)
 
-...
+<br>
 
-#### next
+### ![](./doc/step-bubble-1.png) Create the Obfuscator directory in your gh-pages branch
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+  * Create a directory with a random name (e.g. a sha256 hash) inside your gh-pages branch.
 
-You can automatically setup the heroku instance of the proxy by clicking the button above.
+<br>
 
-![](./doc/urls-and-obfuscator-explained.png)
+  * ![](./doc/urls-and-obfuscator-explained.png)
 
-During the install you need to specify `authType`, `Repository-Owner`, `Repository-Name` and `Obfuscator`.
+<br><br><br><br>
 
-![](./doc/heroku-one-click-install.gif)
+### ![](./doc/step-bubble-2.png) Move Contents of gh-pages branch into obfuscator directory
+
+  * Move files inside the obfuscator directory and create an `index.html` with some dummy content if not already present.
+  * You should now be able to call the URL: 
+    * `https://<owner>.github.io/<repositoryName>/<obfuscator>/index.html`
+
+<br><br><br><br>
+
+### ![](./doc/step-bubble-3.png) Deploy Auth Basic Proxy to Heroku
+
+  * You can automatically setup the heroku instance of the proxy by clicking the deploy button.
+
+<br>
+
+  * [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
+<br>
+
+  * During the install you need to specify `authType`, `Repository-Owner`, `Repository-Name` and `Obfuscator`.
+
+<br>
+
+  * ![](./doc/heroku-one-click-install.gif)
+
+<br><br><br><br>
+
+### ![](./doc/step-bubble-4.png) Check Installation Success Page
+
+  * After you clicked on XXX you should see the *Installation Success* page.
+    * When you configured the parameters correctly you should see a page like this
+
+<br>
+
+    *  ![](./doc/heroku-install-success.png)
 
 
+<br><br><br><br>
+<br><br><br><br>
 
-## 3. Installation on AWS
+## Installation on AWS
 
-Click below to see the full instructions on how to manually setup the proxy on AWS.
+You will need to perform step (1) and step (2) from the heroku instructions and then 
+click below to see the full instructions on how to manually setup the proxy on AWS.
 
 [![](./doc/aws-logo.png)](./doc/Howto-Install-on-AWS.md)
 
 
+<br><br><br><br>
+<br><br><br><br>
 
-## 5. Appendix
+## X. Appendix
 
-### 5.1 Roadmap
+### X.I Roadmap
 
   * Provide oAuth instead of Basic Auth
   * Enable CORS
@@ -65,12 +96,13 @@ Click below to see the full instructions on how to manually setup the proxy on A
   * :white_check_mark: Provide Heroku easy install
 
 
-### 5.2 License
+### X.I License and Trademarks
 
-Licensed under [MIT License](./LICENSE.md)
+  * Licensed under [MIT License](./LICENSE.md)
+  * This little piece of software is brought to you by comSysto.
+  * *comSysto is not a representative of GitHub. GitHub and the GitHub logos are Trademarks of GitHub inc.* 
 
-
-### 5.3 Who needs this?
+### X.III Who needs this?
 
   * If you have a GitHub organization account with organization members.
   * If you have a private organization github repository.
@@ -78,7 +110,7 @@ Licensed under [MIT License](./LICENSE.md)
   * And if you want to secure the gh-pages page via basic auth, then this proxy is for you.
     * Only members of the GitHub organization OR normal GitHub users will have access
   
-### 5.4 What it will do
+### X.IV What it will do
 
 
   * Proxy between GitHub Pages and User (Only GET requests)
@@ -90,13 +122,13 @@ Licensed under [MIT License](./LICENSE.md)
     * the JWT Token is valid for 4 hours.
     * After the Token has expired or the cookie is removed you will have to perform Authentication again.
   
-### 5.5 Is it really secure?
+### X.V Is it really secure?
  
   * Basically `gh-pages` URLs are public. But if you use a private repository you can only **guess** the actual URLs. 
   * If you create a directory in your `gh-pages` branch which is called e.g. `086e41eb6ff7a50ad33ad742dbaa2e70b75740c4950fd5bbbdc71981e6fe88e3` and proxy to this dir, it will be secure as long as no one knows this **obfuscator** directory (you should keep it a secret).
   * You proxy to https (TLS) so no man in the middle attack could get a hold of the obfuscator.
 
-### 5.6 Is it fast?
+### X.VI Is it fast?
  
   * The short answer is: meeeeh
   * Currently there is no real good proxy implementation in place that would cache files.
@@ -104,7 +136,7 @@ Licensed under [MIT License](./LICENSE.md)
   * At least the Authentication is fast and optimized via JWT Auth Cookie. That reduces the auth calls on the github API.
 
 
-### 5.7 Styleguide
+### X.VII Styleguide
 
 ```
 türkis   #1e9dcc
