@@ -24,50 +24,52 @@ Basic Auth checks against GitHub API.
 <br>
 
 ### ![](./doc/step-bubble-1.png) Create the Obfuscator directory in your gh-pages branch
+<hr>
 
-  * Create a directory with a random name (e.g. a sha256 hash) inside your gh-pages branch.
-
-<br>
-
+  * Create a directory with a random name (e.g. a sha256 hash) inside your gh-pages branch. <br>&nbsp;
   * ![](./doc/urls-and-obfuscator-explained.png)
 
 <br><br><br><br>
 
 ### ![](./doc/step-bubble-2.png) Move Contents of gh-pages branch into obfuscator directory
+<hr>
 
-  * Move files inside the obfuscator directory and create an `index.html` with some dummy content if not already present.
+  * Move files into the obfuscator directory and create an `index.html` with some dummy content if not already present.
   * You should now be able to call the URL: 
     * `https://<owner>.github.io/<repositoryName>/<obfuscator>/index.html`
 
 <br><br><br><br>
 
 ### ![](./doc/step-bubble-3.png) Deploy Auth Basic Proxy to Heroku
+<hr>
 
   * You can automatically setup the heroku instance of the proxy by clicking the deploy button.
 
-<br>
+<p align="center">
+  <a href="https://heroku.com/deploy"><img src="https://www.herokucdn.com/deploy/button.svg" height="50" /></a>
+</p>
 
-  * [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
-
-<br>
-
-  * During the install you need to specify `authType`, `Repository-Owner`, `Repository-Name` and `Obfuscator`.
-
-<br>
-
+  * During the install you need to specify `authType`, `Repository-Owner`, `Repository-Name` and `Obfuscator`. <br>&nbsp;
   * ![](./doc/heroku-one-click-install.gif)
 
 <br><br><br><br>
 
 ### ![](./doc/step-bubble-4.png) Check Installation Success Page
+<hr>
 
-  * After you clicked on XXX you should see the *Installation Success* page.
-    * When you configured the parameters correctly you should see a page like this
+  * After you clicked on the view-button you should see the *Installation Success* page. <br>&nbsp;
+    * ![](./doc/heroku-deploy-success.png) <br>&nbsp;
+  * When you configured the parameters correctly you should see a page like this <br>&nbsp;
+    * ![](./doc/heroku-install-success.png)
 
-<br>
+<br><br><br><br>
 
-    *  ![](./doc/heroku-install-success.png)
+### ![](./doc/step-bubble-5.png) Use the Proxy
+<hr>
 
+  * Now you can use the proxy with any url. 
+  * In this example:
+    * `https://nameless-cove-14005.herokuapp.com/*`
 
 <br><br><br><br>
 <br><br><br><br>
