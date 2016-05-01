@@ -23,7 +23,7 @@ Basic Auth checks against GitHub API.
 
 <br>
 
-### ![](./doc/step-bubble-1.png) Create the Obfuscator directory in your gh-pages branch
+### ![](https://comsysto.github.io/github-pages-basic-auth-proxy/public/step-bubble-1.svg) Create the Obfuscator directory in your gh-pages branch
 <hr>
 
   * Create a directory with a random name (e.g. a sha256 hash) inside your gh-pages branch. <br>&nbsp;
