@@ -76,6 +76,9 @@ default_tpl = default_header_tpl + '{{body}}' + default_footer_tpl
 healthcheck_tpl = default_header_tpl + """
 <span style="background:#99d100;padding:20px;color:#fff">&#10003; Proxy is running fine.</span>""" + default_footer_tpl
 
+error_tpl = default_header_tpl + """
+<span style="background:#bf1101;padding:20px;color:#fff">&#10008; {{error.body}}</span>""" + default_footer_tpl
+
 install_success_tpl = default_header_tpl + """
 <span style="background:#99d100;padding:20px;color:#fff">&#10003; Installation done.</span>""" + default_footer_tpl
 
@@ -145,9 +148,6 @@ def proxy_trough_helper(url):
     return proxy_response
 
 
-def render_error_page(error):
-    return template(default_tpl, headline='Error '+error.status, body=error.body)
-
 #
 # BOTTLE APP
 #
@@ -158,11 +158,11 @@ def run_proxy(args):
     #
     @error(401)
     def error404(error):
-        return render_error_page(error)
+        return template(error_tpl, headline='Error '+error.status, error=error)
 
     @error(500)
     def error500(error):
-        return render_error_page(error)
+        return template(error_tpl, headline='Error '+error.status, error=error)
 
     #
     # SPECIAL ENDPOINTS
