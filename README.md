@@ -24,6 +24,7 @@ Basic Auth checks against GitHub API.
 <br>
 
 ### ![](./doc/step-bubble-1.png) Create the Obfuscator directory in your gh-pages branch
+<hr>
 
   * Create a directory with a random name (e.g. a sha256 hash) inside your gh-pages branch.
 
@@ -34,6 +35,7 @@ Basic Auth checks against GitHub API.
 <br><br><br><br>
 
 ### ![](./doc/step-bubble-2.png) Move Contents of gh-pages branch into obfuscator directory
+<hr>
 
   * Move files inside the obfuscator directory and create an `index.html` with some dummy content if not already present.
   * You should now be able to call the URL: 
@@ -42,6 +44,7 @@ Basic Auth checks against GitHub API.
 <br><br><br><br>
 
 ### ![](./doc/step-bubble-3.png) Deploy Auth Basic Proxy to Heroku
+<hr>
 
   * You can automatically setup the heroku instance of the proxy by clicking the deploy button.
 
@@ -60,6 +63,7 @@ Basic Auth checks against GitHub API.
 <br><br><br><br>
 
 ### ![](./doc/step-bubble-4.png) Check Installation Success Page
+<hr>
 
   * After you clicked on the view-button you should see the *Installation Success* page.
 
@@ -78,6 +82,7 @@ Basic Auth checks against GitHub API.
 <br><br><br><br>
 
 ### ![](./doc/step-bubble-5.png) Use the Proxy
+<hr>
 
   * Now you can use the proxy with any url. 
   * In this example:
