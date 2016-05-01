@@ -1,7 +1,7 @@
 import sys, os
 import argparse
 import colorama
-from bottle import route, request, response, run, hook, abort, redirect, error, install, auth_basic
+from bottle import route, view, request, response, run, hook, abort, redirect, error, install, auth_basic, template
 import simplejson as json
 import random
 import logging
@@ -55,6 +55,39 @@ def main():
 owner = 0
 auth_type = 0
 jwt_secret = "%032x" % random.getrandbits(128)
+
+#
+# TEMPLATES
+#
+default_header_tpl = """<html>
+<head><title>{{headline}} | Auth Basic GitHub Pages Proxy by comSysto</title></head>
+<body>
+<div style="font-family:sans-serif;margin:auto;padding:50px 100px 50px 100px;">
+  <div style="width:100%;background:#1e9dcc">
+    <img src="https://comsysto.github.io/github-pages-basic-auth-proxy/public/logo-small.png">
+  </div>
+  <h1>{{headline}}</h1>"""
+
+default_footer_tpl = """</div>
+</body></html>"""
+
+default_tpl = default_header_tpl + '{{body}}' + default_footer_tpl
+
+healthcheck_tpl = default_header_tpl + """
+<div style="background:#99d100;padding:20px;color:#fff">&#10003; Proxy is running fine.</div>""" + default_footer_tpl
+
+error_tpl = default_header_tpl + """
+<div style="background:#bf1101;padding:20px;color:#fff">&#10008; {{error.body}}</div>""" + default_footer_tpl
+
+install_success_tpl = default_header_tpl + """
+<div style="background:#99d100;padding:20px;color:#fff">&#10003; Installation done.</div>
+<br><br>
+%if remote_page_call_status_code != 200:
+    <div style="background:#bf1101;padding:20px;color:#fff">&#10008; Error calling the gh-pages page (Status {{remote_page_call_status_code}}). Please check the env vars (obfuscator, repositoryOwner and repositoryName) and place a index.html inside the obfuscator dir.</div>
+%else:
+    <div style="background:#99d100;padding:20px;color:#fff">&#10003; Success calling the gh-pages page.</div>
+%end
+""" + default_footer_tpl
 
 #
 # HELPERS
@@ -116,9 +149,12 @@ def normalize_proxy_url(url):
 def proxy_trough_helper(url):
     print ('PROXY-GET: {0}'.format(url))
     proxy_response = requests.get(url)
-    response.set_header('Last-Modified', proxy_response.headers['Last-Modified'])
-    response.set_header('Content-Type',  proxy_response.headers['Content-Type'])
-    response.set_header('Expires',       proxy_response.headers['Expires'])
+    if hasattr(proxy_response.headers, 'Last-Modified'):
+        response.set_header('Last-Modified', proxy_response.headers['Last-Modified'])
+    if hasattr(proxy_response.headers, 'Content-Type'):
+        response.set_header('Content-Type',  proxy_response.headers['Content-Type'])
+    if hasattr(proxy_response.headers, 'Expires'):
+        response.set_header('Expires',       proxy_response.headers['Expires'])
     return proxy_response
 
 
@@ -132,22 +168,23 @@ def run_proxy(args):
     #
     @error(401)
     def error404(error):
-        return json.dumps({ 'error': error.body })
+        return template(error_tpl, headline='Error '+error.status, error=error)
 
     @error(500)
     def error500(error):
-        return json.dumps({ 'error': error.body })
+        return template(error_tpl, headline='Error '+error.status, error=error)
 
     #
     # SPECIAL ENDPOINTS
     #
     @route('/health')
     def hello():
-        return 'ok'
+        return template(healthcheck_tpl, headline='Healthcheck')
 
     @route('/install-success')
     def hello():
-        return 'The Auth Basic GitHub Pages Proxy was installed successfully.'
+        remote_page_call_status_code = proxy_trough_helper('https://{0}.github.io/{1}/{2}/{3}'.format(args.owner, args.repository, args.obfuscator, '/')).status_code
+        return template(install_success_tpl, headline='Installation Success', remote_page_call_status_code=remote_page_call_status_code)
 
     #
     # make args available in auth callback
