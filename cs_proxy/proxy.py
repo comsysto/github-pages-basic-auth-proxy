@@ -1,7 +1,7 @@
 import sys, os
 import argparse
 import colorama
-from bottle import route, view, request, response, run, hook, abort, redirect, error, install, auth_basic, template
+from bottle import route, view, request, response, run, hook, abort, redirect, error, install, auth_basic, template, HTTPResponse
 import simplejson as json
 import random
 import logging
@@ -77,7 +77,7 @@ healthcheck_tpl = default_header_tpl + """
 <div style="background:#99d100;padding:20px;color:#fff">&#10003; Proxy is running fine.</div>""" + default_footer_tpl
 
 error_tpl = default_header_tpl + """
-<div style="background:#bf1101;padding:20px;color:#fff">&#10008; {{error.body}}</div>""" + default_footer_tpl
+<div style="background:#bf1101;padding:20px;color:#fff">&#10008; {{error}}</div>""" + default_footer_tpl
 
 install_success_tpl = default_header_tpl + """
 <div style="background:#99d100;padding:20px;color:#fff">&#10003; Installation done.</div>
@@ -149,13 +149,21 @@ def normalize_proxy_url(url):
 def proxy_trough_helper(url):
     print ('PROXY-GET: {0}'.format(url))
     proxy_response = requests.get(url)
-    if hasattr(proxy_response.headers, 'Last-Modified'):
-        response.set_header('Last-Modified', proxy_response.headers['Last-Modified'])
-    if hasattr(proxy_response.headers, 'Content-Type'):
-        response.set_header('Content-Type',  proxy_response.headers['Content-Type'])
-    if hasattr(proxy_response.headers, 'Expires'):
-        response.set_header('Expires',       proxy_response.headers['Expires'])
-    return proxy_response
+    if proxy_response.status_code == 200:
+        if proxy_response.headers['Last-Modified']:
+            response.set_header('Last-Modified', proxy_response.headers['Last-Modified'])
+        if proxy_response.headers['Content-Type']:
+            response.set_header('Content-Type',  proxy_response.headers['Content-Type'])
+        if proxy_response.headers['Expires']:
+            response.set_header('Expires',       proxy_response.headers['Expires'])
+        return proxy_response
+    else:
+        return HTTPResponse(status=proxy_response.status_code,
+                            body=template(error_tpl,
+                                          headline='Error {0}'.format(proxy_response.status_code),
+                                          error='error during proxy call'))
+
+
 
 
 #
@@ -168,11 +176,11 @@ def run_proxy(args):
     #
     @error(401)
     def error404(error):
-        return template(error_tpl, headline='Error '+error.status, error=error)
+        return template(error_tpl, headline='Error '+error.status, error=error.body)
 
     @error(500)
     def error500(error):
-        return template(error_tpl, headline='Error '+error.status, error=error)
+        return template(error_tpl, headline='Error '+error.status, error=error.body)
 
     #
     # SPECIAL ENDPOINTS
