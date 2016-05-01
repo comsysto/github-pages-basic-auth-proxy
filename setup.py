@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='comsysto_github_pages_basic_auth_proxy',
-      version='0.0.3',
+      version='0.0.4',
       description='Python Proxy for GitHub Pages with Basic Auth',
       url='https://github.com/comsysto/github-pages-basic-auth-proxy',
       author='comSysto GmbH',
