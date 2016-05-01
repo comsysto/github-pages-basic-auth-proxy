@@ -1,13 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Tiny//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-tiny.dtd" [
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
 	<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
 ]>
-<svg version="1.1" baseProfile="tiny"
+<svg version="1.1"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
-	 x="0px" y="0px" width="61px" height="51px" viewBox="-1 -1 61 51" xml:space="preserve">
+	 x="0px" y="0px" width="30px" height="25px" viewBox="-1 -1 61 51" enable-background="new -1 -1 61 51" xml:space="preserve">
 <defs>
 </defs>
 <circle fill="#1D9CCB" cx="25.087" cy="25.087" r="25.087"/>
-<text transform="matrix(1 0 0 1 15.0229 36.209)" fill="#FFFFFF" font-family="'SourceSansPro-Bold'" font-size="36">4</text>
+<text transform="matrix(1 0 0 1 15.5347 35.79)" display="none" fill="#FFFFFF" font-family="'SourceSansPro-Bold'" font-size="36">1</text>
+<text transform="matrix(1 0 0 1 15.5347 35.79)" display="none" fill="#FFFFFF" font-family="'SourceSansPro-Bold'" font-size="36">1</text>
+<text transform="matrix(1 0 0 1 15.5347 35.79)" display="none" fill="#FFFFFF" font-family="'SourceSansPro-Bold'" font-size="36">1</text>
+<path fill="#FFFFFF" d="M33.679,30.318h-2.628v5.472h-4.932v-5.472h-9.9v-3.636l8.352-13.752h6.48v13.356h2.628V30.318z
+	 M26.119,26.286v-3.708c0-0.744,0.023-1.602,0.072-2.574c0.048-0.972,0.096-1.818,0.144-2.538H26.19
+	c-0.288,0.625-0.588,1.26-0.9,1.908c-0.312,0.648-0.636,1.296-0.972,1.944l-3.024,4.968H26.119z"/>
+<path display="none" fill="#FFFFFF" d="M24.427,36.222c-1.872,0-3.456-0.306-4.752-0.918c-1.296-0.612-2.4-1.374-3.312-2.286
+	l2.376-3.348c0.696,0.625,1.445,1.158,2.25,1.602c0.804,0.444,1.698,0.666,2.682,0.666c1.175,0,2.111-0.3,2.808-0.9
+	c0.696-0.6,1.044-1.488,1.044-2.664c0-1.152-0.33-2.028-0.99-2.628c-0.661-0.6-1.53-0.9-2.61-0.9c-0.336,0-0.636,0.018-0.9,0.054
+	c-0.264,0.036-0.522,0.103-0.774,0.198c-0.252,0.096-0.516,0.216-0.792,0.36s-0.582,0.324-0.918,0.54l-2.376-1.512l0.648-11.556
+	h12.96v4.464h-8.388l-0.396,4.284c0.432-0.192,0.846-0.33,1.242-0.414c0.396-0.084,0.834-0.126,1.314-0.126
+	c0.984,0,1.914,0.144,2.79,0.432c0.876,0.288,1.65,0.72,2.322,1.296c0.671,0.576,1.2,1.308,1.584,2.196
+	c0.383,0.888,0.576,1.944,0.576,3.168c0,1.272-0.228,2.4-0.684,3.384c-0.457,0.984-1.068,1.818-1.836,2.502
+	c-0.768,0.684-1.662,1.206-2.682,1.566C26.592,36.042,25.53,36.222,24.427,36.222z"/>
+<text transform="matrix(1 0 0 1 15.5347 35.79)" display="none" fill="#FFFFFF" font-family="'SourceSansPro-Bold'" font-size="36">1</text>
 </svg>
