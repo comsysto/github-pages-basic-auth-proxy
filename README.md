@@ -66,7 +66,7 @@ Basic Auth checks against GitHub API.
 
 <br>
 
-    *  ![](./doc/heroku-install-success.png)
+    * ![](./doc/heroku-install-success.png)
 
 
 <br><br><br><br>
