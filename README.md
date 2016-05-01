@@ -1,6 +1,6 @@
 [![](./doc/logo.png)](https://github.com/comsysto/github-pages-basic-auth-proxy)
 
-#### GitHub Pages Basic Auth Proxy by comSysto
+#### GitHub Pages Auth Basic Proxy by comSysto
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
@@ -87,7 +87,7 @@ Click below to see the full instructions on how to manually setup the proxy on A
 [![](./doc/aws-logo.png)](./doc/Howto-Install-on-AWS.md)
 
 
-# 4. Roadmap
+## 4. Roadmap
 
   * Provide oAuth instead of Basic Auth
   * Enable CORS
@@ -98,7 +98,7 @@ Click below to see the full instructions on how to manually setup the proxy on A
   * :white_check_mark: Provide Heroku easy install
 
 
-# 5. License
+## 5. License
 
 Licensed under [MIT License](./LICENSE.md)
 
