@@ -19,7 +19,7 @@ Basic Auth checks against GitHub API.
 
 ## Installation on Heroku
 
-![](./doc/beta-warning.png)
+![](./doc/beta-warning.svg)
 
 <br>
 
