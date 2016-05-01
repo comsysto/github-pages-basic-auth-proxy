@@ -31,7 +31,8 @@ Basic Auth checks against GitHub API. This little piece of software is brought t
 ### ![](./doc/step-bubble-1.png) Create the Obfuscator directory in your gh-pages branch
 
   * Create a directory with a random name (e.g. a sha256 hash) inside your gh-pages branch.
-<br>
+
+
   * ![](./doc/urls-and-obfuscator-explained.png)
 
 <br><br><br><br>
