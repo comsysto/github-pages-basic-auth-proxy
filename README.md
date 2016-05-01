@@ -1,11 +1,11 @@
-[![](./doc/logo.png)](https://github.com/comsysto/github-pages-basic-auth-proxy)
+[![](https://comsysto.github.io/github-pages-basic-auth-proxy/public/logo.png)](https://github.com/comsysto/github-pages-basic-auth-proxy)
 
 #### GitHub Pages Auth Basic Proxy by comSysto
 A simple python based proxy to secure github pages with basic auth via a small cloud-proxy-instance.
 Basic Auth checks against GitHub API. 
 
  
-![](./doc/basic-proxy.png)
+![](https://comsysto.github.io/github-pages-basic-auth-proxy/public/basic-proxy.png)
 
 ### Demo
 
@@ -27,11 +27,11 @@ Basic Auth checks against GitHub API.
 <hr>
 
   * Create a directory with a random name (e.g. a sha256 hash) inside your gh-pages branch. <br>&nbsp;
-  * ![](./doc/urls-and-obfuscator-explained.png)
+  * ![](https://comsysto.github.io/github-pages-basic-auth-proxy/public/urls-and-obfuscator-explained.svg)
 
 <br><br><br><br>
 
-### ![](./doc/step-bubble-2.png) Move Contents of gh-pages branch into obfuscator directory
+### ![](https://comsysto.github.io/github-pages-basic-auth-proxy/public/step-bubble-2.svg) Move Contents of gh-pages branch into obfuscator directory
 <hr>
 
   * Move files into the obfuscator directory and create an `index.html` with some dummy content if not already present.
@@ -40,7 +40,7 @@ Basic Auth checks against GitHub API.
 
 <br><br><br><br>
 
-### ![](./doc/step-bubble-3.png) Deploy Auth Basic Proxy to Heroku
+### ![](https://comsysto.github.io/github-pages-basic-auth-proxy/public/step-bubble-3.svg) Deploy Auth Basic Proxy to Heroku
 <hr>
 
   * You can automatically setup the heroku instance of the proxy by clicking the deploy button.
@@ -50,21 +50,21 @@ Basic Auth checks against GitHub API.
 </p>
 
   * During the install you need to specify `authType`, `Repository-Owner`, `Repository-Name` and `Obfuscator`. <br>&nbsp;
-  * ![](./doc/heroku-one-click-install.gif)
+  * ![](https://comsysto.github.io/github-pages-basic-auth-proxy/public/heroku-one-click-install.gif)
 
 <br><br><br><br>
 
-### ![](./doc/step-bubble-4.png) Check Installation Success Page
+### ![](https://comsysto.github.io/github-pages-basic-auth-proxy/public/step-bubble-4.svg) Check Installation Success Page
 <hr>
 
   * After you clicked on the view-button you should see the *Installation Success* page. <br>&nbsp;
-    * ![](./doc/heroku-deploy-success.png) <br>&nbsp;
+    * ![](https://comsysto.github.io/github-pages-basic-auth-proxy/public/heroku-deploy-success.png) <br>&nbsp;
   * When you configured the parameters correctly you should see a page like this <br>&nbsp;
-    * ![](./doc/heroku-install-success.png)
+    * ![](https://comsysto.github.io/github-pages-basic-auth-proxy/public/heroku-install-success.png)
 
 <br><br><br><br>
 
-### ![](./doc/step-bubble-5.png) Use the Proxy
+### ![](https://comsysto.github.io/github-pages-basic-auth-proxy/public/step-bubble-5.svg) Use the Proxy
 <hr>
 
   * Now you can use the proxy with any url. 
@@ -79,7 +79,7 @@ Basic Auth checks against GitHub API.
 You will need to perform step (1) and step (2) from the heroku instructions and then 
 click below to see the full instructions on how to manually setup the proxy on AWS.
 
-[![](./doc/aws-logo.png)](./doc/Howto-Install-on-AWS.md)
+[![](https://comsysto.github.io/github-pages-basic-auth-proxy/public/aws-logo.png)](./doc/Howto-Install-on-AWS.md)
 
 
 <br><br><br><br>
