@@ -61,10 +61,6 @@ Click below to see the full instructions on how to manually setup the proxy on A
 
 Licensed under [MIT License](./LICENSE.md)
 
-colors: 
-```
-türkis   #1e9dcc  #d2ebf5 |  green    #99d100  #ebf6cc | orange   #e67800 | blue     #1c61b3
-```
 
 ### 5.2 Who needs this?
 
@@ -98,3 +94,15 @@ türkis   #1e9dcc  #d2ebf5 |  green    #99d100  #ebf6cc | orange   #e67800 | blu
   * Currently there is no real good proxy implementation in place that would cache files.
   * So for every GET request you have internal GET calls to github pages whose responses are directly returned to the user.
   * At least the Authentication is fast and optimized via JWT Auth Cookie. That reduces the auth calls on the github API.
+
+
+### 5.6 Styleguide
+
+```
+türkis   #1e9dcc
+         #d2ebf5 
+green    #99d100  
+         #ebf6cc 
+orange   #e67800 
+blue     #1c61b3
+```
