@@ -1,4 +1,4 @@
-[![](./logo.png)](https://github.com/comsysto/github-pages-basic-auth-proxy)
+[![](https://comsysto.github.io/github-pages-basic-auth-proxy/public/logo.svg)](https://github.com/comsysto/github-pages-basic-auth-proxy)
 
 #### GitHub Pages Basic Auth Proxy by comSysto
 
