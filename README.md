@@ -76,7 +76,7 @@ You can automatically setup the heroku instance of the proxy by clicking the but
 
 During the install you need to specify `authType`, `Repository-Owner`, `Repository-Name` and `Obfuscator`.
 
-  * ![](./doc/heroku-env-vars-during-install.png)
+![](./doc/heroku-one-click-install.gif)
 
 
 
