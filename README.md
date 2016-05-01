@@ -4,7 +4,6 @@
 A simple python based proxy to secure github pages with basic auth via a small cloud-proxy-instance.
 Basic Auth checks against GitHub API. 
 
-![](./doc/beta-warning.png)
  
 ![](./doc/basic-proxy.png)
 
@@ -19,6 +18,8 @@ Basic Auth checks against GitHub API.
 
 
 ## Installation on Heroku
+
+![](./doc/beta-warning.png)
 
 <br>
 
