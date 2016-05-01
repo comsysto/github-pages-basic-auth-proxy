@@ -1,4 +1,4 @@
-[![](https://comsysto.github.io/github-pages-basic-auth-proxy/public/logo.png)](https://github.com/comsysto/github-pages-basic-auth-proxy)
+[![](https://comsysto.github.io/github-pages-basic-auth-proxy/public/logo.svg)](https://github.com/comsysto/github-pages-basic-auth-proxy)
 
 #### GitHub Pages Auth Basic Proxy by comSysto
 A simple python based proxy to secure github pages with basic auth via a small cloud-proxy-instance.
