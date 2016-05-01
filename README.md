@@ -26,17 +26,22 @@ Basic Auth checks against GitHub API. This little piece of software is brought t
 
 ## 2. Installation on Heroku
 
+<br><br>
+
 ### ![](./doc/step-bubble-1.png) Create the Obfuscator directory in your gh-pages branch
 
   * Create a directory with a random name (e.g. a sha256 hash) inside your gh-pages branch.
 
 ![](./doc/urls-and-obfuscator-explained.png)
 
+<br><br><br><br>
+
 ### ![](./doc/step-bubble-2.png) Move Contents of gh-pages branch into obfuscator directory
 
   * Move files inside the obfuscator directory and create an `index.html` with some dummy content if not already present.
   * You should now be able to call the URL: 
     * `https://<owner>.github.io/<repositoryName>/<obfuscator>/index.html`
+<br><br><br><br>
 
 ### ![](./doc/step-bubble-3.png) Deploy Auth Basic Proxy to Heroku
 
@@ -47,14 +52,18 @@ Basic Auth checks against GitHub API. This little piece of software is brought t
 ![](./doc/heroku-one-click-install.gif)
 
 
-
+<br><br><br><br>
+<br><br><br><br>
 ## 3. Installation on AWS
 
-Click below to see the full instructions on how to manually setup the proxy on AWS.
+You will need to perform step (1) and step (2) from the heroku instructions and then 
+click below to see the full instructions on how to manually setup the proxy on AWS.
 
 [![](./doc/aws-logo.png)](./doc/Howto-Install-on-AWS.md)
 
 
+<br><br><br><br>
+<br><br><br><br>
 
 ## 5. Appendix
 
