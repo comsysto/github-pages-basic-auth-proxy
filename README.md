@@ -19,7 +19,7 @@ Basic Auth checks against GitHub API.
 
 ## Installation on Heroku
 
-![](./doc/beta-warning.svg)
+![](https://comsysto.github.io/github-pages-basic-auth-proxy/public/beta-warning.svg)
 
 <br>
 
