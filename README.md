@@ -75,6 +75,13 @@ Basic Auth checks against GitHub API.
 
   * ![](./doc/heroku-install-success.png)
 
+<br><br><br><br>
+
+### ![](./doc/step-bubble-5.png) Use the Proxy
+
+  * Now you can use the proxy with any url. 
+  * In this example:
+    * `https://nameless-cove-14005.herokuapp.com/*`
 
 <br><br><br><br>
 <br><br><br><br>
