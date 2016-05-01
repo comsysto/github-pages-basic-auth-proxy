@@ -57,7 +57,7 @@ Basic Auth checks against GitHub API. This little piece of software is brought t
 ### 1.4 Is it really secure?
  
   * Basically `gh-pages` URLs are public. But if you use a private repository you can only **guess** the actual URLs. 
-  * If you create a directory in your `gh-pages` branch which is called e.g. `086e41eb6ff7a50ad33ad742dbaa2e70b75740c4950fd5bbbdc71981e6fe88e3` and proxy to this dir, it will be secure as long as no one knows **obfuscator** (you should keep it secret).
+  * If you create a directory in your `gh-pages` branch which is called e.g. `086e41eb6ff7a50ad33ad742dbaa2e70b75740c4950fd5bbbdc71981e6fe88e3` and proxy to this dir, it will be secure as long as no one knows this **obfuscator** directory (you should keep it a secret).
   * You proxy to https (TLS) so no man in the middle attack could get a hold of the obfuscator.
 
 ### 1.5 Is it fast?
