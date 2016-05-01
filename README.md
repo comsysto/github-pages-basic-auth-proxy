@@ -1,4 +1,4 @@
-![](./doc/logo.png)
+[![](./doc/logo.png)](https://github.com/comsysto/github-pages-basic-auth-proxy)
 
 #### GitHub Pages Basic Auth Proxy by comSysto
 
@@ -24,14 +24,12 @@ Basic Auth checks against GitHub API. This little piece of software is brought t
 
   * Secured Page by Proxy:
     * https://my-secure-github-page.comsysto.com/
-    * You can login on the page with your GitHub Username and [personal access token](https://help.github.com/articles/creating-an-access-token-for-command-line-use/) (which can have no scopes)
-    * The proxy is running on this instance with the following parameters (you can see below what that means)
-      * `cs-gh-proxy -e wsgi -p 8881 --authType allGitHubUsers --owner comsysto --repository github-pages-basic-auth-proxy --obfuscator 086e41eb6ff7a50ad33ad742dbaa2e70b75740c4950fd5bbbdc71981e6fe88e3 &`
+      * You can login on the page with your GitHub Username and [personal access token](https://help.github.com/articles/creating-an-access-token-for-command-line-use/) (which can have no scopes)
+      * The proxy is running on this instance with the following parameters (you can see below what that means)
+        * `cs-gh-proxy -e wsgi -p 8881 --authType allGitHubUsers --owner comsysto --repository github-pages-basic-auth-proxy --obfuscator 086e41eb6ff7a50ad33ad742dbaa2e70b75740c4950fd5bbbdc71981e6fe88e3 &`
   * GitHub Page that is proxied:
     * https://comsysto.github.io/github-pages-basic-auth-proxy/086e41eb6ff7a50ad33ad742dbaa2e70b75740c4950fd5bbbdc71981e6fe88e3/
-    * (normally you would not tell anyone that URL. But just that you see that these pages are identical)
-  
-
+      * (normally you would not tell anyone that URL. It is just here that you see that these pages are identical)
 
 ### 1.2 Who needs this?
 
