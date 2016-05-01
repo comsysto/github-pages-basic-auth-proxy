@@ -74,13 +74,20 @@ default_footer_tpl = """</div>
 default_tpl = default_header_tpl + '{{body}}' + default_footer_tpl
 
 healthcheck_tpl = default_header_tpl + """
-<span style="background:#99d100;padding:20px;color:#fff">&#10003; Proxy is running fine.</span>""" + default_footer_tpl
+<div style="background:#99d100;padding:20px;color:#fff">&#10003; Proxy is running fine.</div>""" + default_footer_tpl
 
 error_tpl = default_header_tpl + """
-<span style="background:#bf1101;padding:20px;color:#fff">&#10008; {{error.body}}</span>""" + default_footer_tpl
+<div style="background:#bf1101;padding:20px;color:#fff">&#10008; {{error.body}}</div>""" + default_footer_tpl
 
 install_success_tpl = default_header_tpl + """
-<span style="background:#99d100;padding:20px;color:#fff">&#10003; Installation done.</span>""" + default_footer_tpl
+<div style="background:#99d100;padding:20px;color:#fff">&#10003; Installation done.</div>
+<br><br>
+%if remote_page_call_status_code != 200:
+    <div style="background:#bf1101;padding:20px;color:#fff">&#10008; Error calling the gh-pages page (Status {{remote_page_call_status_code}}). Please check the env vars (obfuscator, repositoryOwner and repositoryName) and place a index.html inside the obfuscator dir.</div>
+%else:
+    <div style="background:#99d100;padding:20px;color:#fff">&#10003; Success calling the gh-pages page.</div>
+%end
+""" + default_footer_tpl
 
 #
 # HELPERS
@@ -142,9 +149,12 @@ def normalize_proxy_url(url):
 def proxy_trough_helper(url):
     print ('PROXY-GET: {0}'.format(url))
     proxy_response = requests.get(url)
-    response.set_header('Last-Modified', proxy_response.headers['Last-Modified'])
-    response.set_header('Content-Type',  proxy_response.headers['Content-Type'])
-    response.set_header('Expires',       proxy_response.headers['Expires'])
+    if hasattr(proxy_response.headers, 'Last-Modified'):
+        response.set_header('Last-Modified', proxy_response.headers['Last-Modified'])
+    if hasattr(proxy_response.headers, 'Content-Type'):
+        response.set_header('Content-Type',  proxy_response.headers['Content-Type'])
+    if hasattr(proxy_response.headers, 'Expires'):
+        response.set_header('Expires',       proxy_response.headers['Expires'])
     return proxy_response
 
 
@@ -173,7 +183,8 @@ def run_proxy(args):
 
     @route('/install-success')
     def hello():
-        return template(install_success_tpl, headline='Installation Success')
+        remote_page_call_status_code = proxy_trough_helper('https://{0}.github.io/{1}/{2}/{3}'.format(args.owner, args.repository, args.obfuscator, '/')).status_code
+        return template(install_success_tpl, headline='Installation Success', remote_page_call_status_code=remote_page_call_status_code)
 
     #
     # make args available in auth callback
