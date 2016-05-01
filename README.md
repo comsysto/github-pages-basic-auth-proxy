@@ -28,21 +28,21 @@ Basic Auth checks against GitHub API. This little piece of software is brought t
 
 ### ![](./doc/step-bubble-1.png) Create the Obfuscator directory in your gh-pages branch
 
-...
-
-### ![](./doc/step-bubble-2.png) Move Contents of gh-pages branch into obfuscator directory
-
-and create an `index.html` if not already present.
-
-### ![](./doc/step-bubble-3.png) Deploy proxy to heroku
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
-
-You can automatically setup the heroku instance of the proxy by clicking the button above.
+  * Create a directory with a random name (e.g. a sha256 hash) inside your gh-pages branch.
 
 ![](./doc/urls-and-obfuscator-explained.png)
 
-During the install you need to specify `authType`, `Repository-Owner`, `Repository-Name` and `Obfuscator`.
+### ![](./doc/step-bubble-2.png) Move Contents of gh-pages branch into obfuscator directory
+
+  * Move files inside the obfuscator directory and create an `index.html` with some dummy content if not already present.
+  * You should now be able to call the URL: 
+    * `https://<owner>.github.io/<repositoryName>/<obfuscator>/index.html`
+
+### ![](./doc/step-bubble-3.png) Deploy Auth Basic Proxy to Heroku
+
+  * [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+  * You can automatically setup the heroku instance of the proxy by clicking the button above.
+  * During the install you need to specify `authType`, `Repository-Owner`, `Repository-Name` and `Obfuscator`.
 
 ![](./doc/heroku-one-click-install.gif)
 
