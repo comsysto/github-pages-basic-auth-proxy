@@ -45,7 +45,10 @@ Click below to see the full instructions on how to manually setup the proxy on A
 [![](./doc/aws-logo.png)](./doc/Howto-Install-on-AWS.md)
 
 
-## 4. Roadmap
+
+## 5. Appendix
+
+### 5.1 Roadmap
 
   * Provide oAuth instead of Basic Auth
   * Enable CORS
@@ -55,14 +58,13 @@ Click below to see the full instructions on how to manually setup the proxy on A
   * Provide Ubuntu init Scripts
   * :white_check_mark: Provide Heroku easy install
 
-## 5. Appendix
 
-### 5.1 License
+### 5.2 License
 
 Licensed under [MIT License](./LICENSE.md)
 
 
-### 5.2 Who needs this?
+### 5.3 Who needs this?
 
   * If you have a GitHub organization account with organization members.
   * If you have a private organization github repository.
@@ -70,7 +72,7 @@ Licensed under [MIT License](./LICENSE.md)
   * And if you want to secure the gh-pages page via basic auth, then this proxy is for you.
     * Only members of the GitHub organization OR normal GitHub users will have access
   
-### 5.3 What it will do
+### 5.4 What it will do
 
 
   * Proxy between GitHub Pages and User (Only GET requests)
@@ -82,13 +84,13 @@ Licensed under [MIT License](./LICENSE.md)
     * the JWT Token is valid for 4 hours.
     * After the Token has expired or the cookie is removed you will have to perform Authentication again.
   
-### 5.4 Is it really secure?
+### 5.5 Is it really secure?
  
   * Basically `gh-pages` URLs are public. But if you use a private repository you can only **guess** the actual URLs. 
   * If you create a directory in your `gh-pages` branch which is called e.g. `086e41eb6ff7a50ad33ad742dbaa2e70b75740c4950fd5bbbdc71981e6fe88e3` and proxy to this dir, it will be secure as long as no one knows this **obfuscator** directory (you should keep it a secret).
   * You proxy to https (TLS) so no man in the middle attack could get a hold of the obfuscator.
 
-### 5.5 Is it fast?
+### 5.6 Is it fast?
  
   * The short answer is: meeeeh
   * Currently there is no real good proxy implementation in place that would cache files.
@@ -96,7 +98,7 @@ Licensed under [MIT License](./LICENSE.md)
   * At least the Authentication is fast and optimized via JWT Auth Cookie. That reduces the auth calls on the github API.
 
 
-### 5.6 Styleguide
+### 5.7 Styleguide
 
 ```
 türkis   #1e9dcc
