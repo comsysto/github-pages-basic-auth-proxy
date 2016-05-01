@@ -32,6 +32,7 @@ Basic Auth checks against GitHub API. This little piece of software is brought t
 
   * Create a directory with a random name (e.g. a sha256 hash) inside your gh-pages branch.
 
+<br>
 
   * ![](./doc/urls-and-obfuscator-explained.png)
 
