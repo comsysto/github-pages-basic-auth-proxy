@@ -2,8 +2,6 @@
 
 #### GitHub Pages Auth Basic Proxy by comSysto
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
-
 ## 1. Introduction
 
 A simple python based proxy to secure github pages with basic auth via a small cloud-proxy-instance.
