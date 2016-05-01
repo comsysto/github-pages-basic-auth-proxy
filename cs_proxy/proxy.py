@@ -1,7 +1,7 @@
 import sys, os
 import argparse
 import colorama
-from bottle import route, request, response, run, hook, abort, redirect, error, install, auth_basic, template
+from bottle import route, view, request, response, run, hook, abort, redirect, error, install, auth_basic, template
 import simplejson as json
 import random
 import logging
@@ -55,6 +55,29 @@ def main():
 owner = 0
 auth_type = 0
 jwt_secret = "%032x" % random.getrandbits(128)
+
+#
+# TEMPLATES
+#
+default_header_tpl = """<html>
+<head><title>{{headline}} | Auth Basic GitHub Pages Proxy by comSysto</title></head>
+<body>
+<div style="font-family:sans-serif;margin:auto;padding:50px 100px 50px 100px;">
+  <div style="width:100%;background:#1e9dcc">
+    <img src="https://comsysto.github.io/github-pages-basic-auth-proxy/public/logo-small.png">
+  </div>
+  <h1>{{headline}}</h1>"""
+
+default_footer_tpl = """</div>
+</body></html>"""
+
+default_tpl = default_header_tpl + '{{body}}' + default_footer_tpl
+
+healthcheck_tpl = default_header_tpl + """
+<span style="background:#99d100;padding:20px;color:#fff">&#10003; Proxy is running fine.</span>""" + default_footer_tpl
+
+install_success_tpl = default_header_tpl + """
+<span style="background:#99d100;padding:20px;color:#fff">&#10003; Installation done.</span>""" + default_footer_tpl
 
 #
 # HELPERS
@@ -123,16 +146,7 @@ def proxy_trough_helper(url):
 
 
 def render_error_page(error):
-    return template(('<html>'
-                     '<head><title>Error | Auth Basic GitHub Pages Proxy by comSysto</title></head>'
-                     '<body>'
-                     '<div style="">',
-                     '<img src="https://comsysto.github.io/github-pages-basic-auth-proxy/public/logo-small.png">',
-                     '<h1>Error {{error.code}}</h1>',
-                     '{{error.body}}'
-                     '</div>',
-                     '</body></html>'
-                     ) , error=error)
+    return template(default_tpl, headline='Error '+error.status, body=error.body)
 
 #
 # BOTTLE APP
@@ -155,11 +169,11 @@ def run_proxy(args):
     #
     @route('/health')
     def hello():
-        return 'ok'
+        return template(healthcheck_tpl, headline='Healthcheck')
 
     @route('/install-success')
     def hello():
-        return 'The Auth Basic GitHub Pages Proxy was installed successfully.'
+        return template(install_success_tpl, headline='Installation Success')
 
     #
     # make args available in auth callback
