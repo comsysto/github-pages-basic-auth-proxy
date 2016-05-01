@@ -21,7 +21,7 @@ Basic Auth checks against GitHub API. This little piece of software is brought t
 |--------------------------|-------------------------------|
 | :closed_lock_with_key: https://my-secure-github-page.comsysto.com/ | :unlock:  [https://comsysto.github.io/github-pages-basic-auth-proxy/086e4...fe88e3/](https://comsysto.github.io/github-pages-basic-auth-proxy/086e41eb6ff7a50ad33ad742dbaa2e70b75740c4950fd5bbbdc71981e6fe88e3/) |
 | You can login with your GitHub Username and password.  |  (normally you would not tell anyone that URL. It is just here that you see that these pages are identical) |
-| You can login with your GitHub Username and a [personal access token](https://help.github.com/articles/creating-an-access-token-for-command-line-use/) as password which can have no scopes| |
+| Or You can login with your GitHub Username and a [personal access token](https://help.github.com/articles/creating-an-access-token-for-command-line-use/) as password. The token does not need any scopes.| |
 
 
 ## 2. Installation on Heroku
