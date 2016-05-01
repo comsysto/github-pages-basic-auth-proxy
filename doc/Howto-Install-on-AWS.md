@@ -1,3 +1,7 @@
+![](./logo.png)
+
+#### GitHub Pages Basic Auth Proxy by comSysto
+
 # 3. Howto Install on AWS
 
 We will do demo setup for the following scenario:
