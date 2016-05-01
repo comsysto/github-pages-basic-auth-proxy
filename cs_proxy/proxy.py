@@ -1,7 +1,7 @@
 import sys, os
 import argparse
 import colorama
-from bottle import route, request, response, run, hook, abort, redirect, error, install, auth_basic
+from bottle import route, request, response, run, hook, abort, redirect, error, install, auth_basic, template
 import simplejson as json
 import random
 import logging
@@ -122,6 +122,18 @@ def proxy_trough_helper(url):
     return proxy_response
 
 
+def render_error_page(error):
+    return template(('<html>'
+                     '<head><title>Error | Auth Basic GitHub Pages Proxy by comSysto</title></head>'
+                     '<body>'
+                     '<div style="">',
+                     '<img src="https://comsysto.github.io/github-pages-basic-auth-proxy/public/logo-small.png">',
+                     '<h1>Error {{error.code}}</h1>',
+                     '{{error.body}}'
+                     '</div>',
+                     '</body></html>'
+                     ) , error=error)
+
 #
 # BOTTLE APP
 #
@@ -132,11 +144,11 @@ def run_proxy(args):
     #
     @error(401)
     def error404(error):
-        return json.dumps({ 'error': error.body })
+        return render_error_page(error)
 
     @error(500)
     def error500(error):
-        return json.dumps({ 'error': error.body })
+        return render_error_page(error)
 
     #
     # SPECIAL ENDPOINTS
