@@ -26,10 +26,7 @@ Basic Auth checks against GitHub API.
 ### ![](./doc/step-bubble-1.png) Create the Obfuscator directory in your gh-pages branch
 <hr>
 
-  * Create a directory with a random name (e.g. a sha256 hash) inside your gh-pages branch.
-
-<br>
-
+  * Create a directory with a random name (e.g. a sha256 hash) inside your gh-pages branch. <br>&nbsp;
   * ![](./doc/urls-and-obfuscator-explained.png)
 
 <br><br><br><br>
@@ -46,18 +43,9 @@ Basic Auth checks against GitHub API.
 ### ![](./doc/step-bubble-3.png) Deploy Auth Basic Proxy to Heroku
 <hr>
 
-  * You can automatically setup the heroku instance of the proxy by clicking the deploy button.
-
-<br>
-
-  * [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
-
-<br>
-
-  * During the install you need to specify `authType`, `Repository-Owner`, `Repository-Name` and `Obfuscator`.
-
-<br>
-
+  * You can automatically setup the heroku instance of the proxy by clicking the deploy button.<br>&nbsp;
+  * [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)  <br>&nbsp;
+  * During the install you need to specify `authType`, `Repository-Owner`, `Repository-Name` and `Obfuscator`. <br>&nbsp;
   * ![](./doc/heroku-one-click-install.gif)
 
 <br><br><br><br>
@@ -65,18 +53,9 @@ Basic Auth checks against GitHub API.
 ### ![](./doc/step-bubble-4.png) Check Installation Success Page
 <hr>
 
-  * After you clicked on the view-button you should see the *Installation Success* page.
-
-<br>
-  
-  * ![](./doc/heroku-deploy-success.png)
-
-<br>
-
-  * When you configured the parameters correctly you should see a page like this
-
-<br>
-
+  * After you clicked on the view-button you should see the *Installation Success* page. <br>&nbsp;
+  * ![](./doc/heroku-deploy-success.png) <br>&nbsp;
+  * When you configured the parameters correctly you should see a page like this <br>&nbsp;
   * ![](./doc/heroku-install-success.png)
 
 <br><br><br><br>
