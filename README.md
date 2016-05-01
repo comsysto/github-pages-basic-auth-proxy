@@ -26,11 +26,15 @@ Basic Auth checks against GitHub API. This little piece of software is brought t
 
 ## 2. Installation on Heroku
 
-#### ![](./doc/step-bubble-1.png) Create the Obfuscator directory in your gh-pages branch
+### ![](./doc/step-bubble-1.png) Create the Obfuscator directory in your gh-pages branch
 
 ...
 
-#### next
+### ![](./doc/step-bubble-2.png) Move Contents of gh-pages branch into obfuscator directory
+
+and create an `index.html` if not already present.
+
+### ![](./doc/step-bubble-3.png) Deploy proxy to heroku
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
