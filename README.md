@@ -61,12 +61,19 @@ Basic Auth checks against GitHub API.
 
 ### ![](./doc/step-bubble-4.png) Check Installation Success Page
 
-  * After you clicked on XXX you should see the *Installation Success* page.
-    * When you configured the parameters correctly you should see a page like this
+  * After you clicked on the view-button you should see the *Installation Success* page.
+
+<br>
+  
+  * ![](./doc/heroku-deploy-success.png)
 
 <br>
 
-    * ![](./doc/heroku-install-success.png)
+  * When you configured the parameters correctly you should see a page like this
+
+<br>
+
+  * ![](./doc/heroku-install-success.png)
 
 
 <br><br><br><br>
