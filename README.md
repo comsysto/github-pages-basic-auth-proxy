@@ -34,7 +34,7 @@ Basic Auth checks against GitHub API.
 ### ![](./doc/step-bubble-2.png) Move Contents of gh-pages branch into obfuscator directory
 <hr>
 
-  * Move files inside the obfuscator directory and create an `index.html` with some dummy content if not already present.
+  * Move files into the obfuscator directory and create an `index.html` with some dummy content if not already present.
   * You should now be able to call the URL: 
     * `https://<owner>.github.io/<repositoryName>/<obfuscator>/index.html`
 
