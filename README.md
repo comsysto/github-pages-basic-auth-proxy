@@ -70,11 +70,12 @@ Basic Auth checks against GitHub API. This little piece of software is brought t
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-You can automatically setup the heroku instance of the proxy by clicking the button above and configure it via `env` vars.
-You need to specify `authType`, `owner`, `repository` and `obfuscator`.
+You can automatically setup the heroku instance of the proxy by clicking the button above.
 
-IFrame Test:
-<iframe width="560" height="315" src="https://comsysto.com" frameborder="0" allowfullscreen></iframe>
+During the install you need to specify `authType`, `owner`, `repository` and `obfuscator`.
+
+  * ![](heroku-env-vars-during-install.png)
+
 
 
 ## 3. Installation on AWS
