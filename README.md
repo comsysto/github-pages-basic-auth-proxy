@@ -30,7 +30,9 @@ Basic Auth checks against GitHub API. This little piece of software is brought t
   * GitHub Page that is proxied:
     * https://comsysto.github.io/github-pages-basic-auth-proxy/086e41eb6ff7a50ad33ad742dbaa2e70b75740c4950fd5bbbdc71981e6fe88e3/
     * (normally you would not tell anyone that URL. But just that you see that these pages are identical)
- 
+  
+![](./doc/urls-and-obfuscator-explained.png)
+
 ### 1.2 Who needs this?
 
   * If you have a GitHub organization account with organization members.
