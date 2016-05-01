@@ -26,7 +26,7 @@ Basic Auth checks against GitHub API. This little piece of software is brought t
 
 ## 2. Installation on Heroku
 
-<br><br>
+<br>
 
 ### ![](./doc/step-bubble-1.png) Create the Obfuscator directory in your gh-pages branch
 
@@ -43,6 +43,7 @@ Basic Auth checks against GitHub API. This little piece of software is brought t
   * Move files inside the obfuscator directory and create an `index.html` with some dummy content if not already present.
   * You should now be able to call the URL: 
     * `https://<owner>.github.io/<repositoryName>/<obfuscator>/index.html`
+
 <br><br><br><br>
 
 ### ![](./doc/step-bubble-3.png) Deploy Auth Basic Proxy to Heroku
@@ -56,7 +57,21 @@ Basic Auth checks against GitHub API. This little piece of software is brought t
 <br>
 
   * During the install you need to specify `authType`, `Repository-Owner`, `Repository-Name` and `Obfuscator`.
+
+<br>
+
   * ![](./doc/heroku-one-click-install.gif)
+
+<br><br><br><br>
+
+### ![](./doc/step-bubble-4.png) Check Installation Success Page
+
+  * After you clicked on XXX you should see the *Installation Success* page.
+    * When you configured the parameters correctly you should see a page like this
+
+<br>
+
+    *  ![](./doc/heroku-install-success.png)
 
 
 <br><br><br><br>
