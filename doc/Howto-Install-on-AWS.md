@@ -29,18 +29,29 @@ server {
     listen 443;
     server_name my-secure-github-page.comsysto.com;
 
+    # You are responsible yourself to keep your webserver secure!
+    # read: https://raymii.org/s/tutorials/Strong_SSL_Security_On_nginx.html
     ssl on;
-    ssl_certificate /etc/ssl/comsysto.crt;
-    ssl_certificate_key /etc/ssl/comsysto.key;
+    ssl_certificate /etc/nginx/ssl/nginx.crt;
+    ssl_certificate_key /etc/nginx/ssl/nginx.key;
     ssl_session_timeout 5m;
-    ssl_protocols SSLv3 TLSv1 TLSv1.1 TLSv1.2;
-    ssl_ciphers "HIGH:!aNULL:!MD5 or HIGH:!aNULL:!MD5:!3DES";
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+    ssl_ciphers 'EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH';
     ssl_prefer_server_ciphers on;
+    ssl_session_cache shared:SSL:10m;
+    ssl_dhparam /etc/ssl/certs/dhparam.pem;
     
     location / {
         proxy_pass http://127.0.0.1:8881/;
     }
 }
+```
+
+we need to generate the `dhparam.pem`
+
+```
+cd /etc/ssl/certs
+openssl dhparam -out dhparam.pem 4096
 ```
 
 ### 3.3 python proxy setup
