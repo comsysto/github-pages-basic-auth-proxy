@@ -46,11 +46,15 @@ Basic Auth checks against GitHub API.
   * You can automatically setup the heroku instance of the proxy by clicking the deploy button.
 
 <p align="center">
-  <a href="https://heroku.com/deploy"><img src="https://www.herokucdn.com/deploy/button.svg" height="50" /></a>
+  <a href="https://heroku.com/deploy"><img src="https://www.herokucdn.com/deploy/button.svg" /></a>
 </p>
 
   * During the install you need to specify `authType`, `Repository-Owner`, `Repository-Name` and `Obfuscator`. <br>&nbsp;
-  * ![](https://comsysto.github.io/github-pages-basic-auth-proxy/public/heroku-one-click-install.gif)
+
+<p align="center">
+  <img src="https://comsysto.github.io/github-pages-basic-auth-proxy/public/heroku-one-click-install.gif" style="padding-left:20px" />
+</p>
+
 
 <br><br><br><br>
 
@@ -58,7 +62,11 @@ Basic Auth checks against GitHub API.
 <hr>
 
   * After you clicked on the view-button you should see the *Installation Success* page. <br>&nbsp;
-    * ![](https://comsysto.github.io/github-pages-basic-auth-proxy/public/heroku-deploy-success.png) <br>&nbsp;
+
+<p align="center">
+  <img src="https://comsysto.github.io/github-pages-basic-auth-proxy/public/heroku-deploy-success.png" style="padding-left:30px" />
+</p>
+
   * When you configured the parameters correctly you should see a page like this <br>&nbsp;
     * ![](https://comsysto.github.io/github-pages-basic-auth-proxy/public/heroku-install-success.png)
 
