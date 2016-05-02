@@ -52,7 +52,7 @@ Basic Auth checks against GitHub API.
   * You can automatically setup the heroku instance of the proxy by clicking the deploy button.
 
 <p align="center">
-  <a href="https://heroku.com/deploy"><img src="https://www.herokucdn.com/deploy/button.svg" /></a>
+  <a href="https://heroku.com/deploy"><img src="https://www.herokucdn.com/deploy/button.svg" height="50" /></a>
 </p>
 
   * During the install you need to specify `authType`, `Repository-Owner`, `Repository-Name` and `Obfuscator`. <br>&nbsp;
