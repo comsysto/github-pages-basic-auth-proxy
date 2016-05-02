@@ -55,9 +55,10 @@ Basic Auth checks against GitHub API.
   <a href="https://heroku.com/deploy"><img src="https://www.herokucdn.com/deploy/button.svg" height="50" /></a>
 </p>
 
-  * During the install you need to specify `Repository-Owner`, `Repository-Name` and `Obfuscator`.
+  * During the install you need to specify `Repository-Owner`, `Repository-Name` and `Obfuscator`. <br>&nbsp;
   * You will also need to specify the  `authType` which can be:
-    * `onlyGitHubOrgUsers` which will allow every GitHub user belonging to your GitHub Organization (note: repository must be an org repo)  OR
+    * `onlyGitHubOrgUsers` which will allow every GitHub user belonging to your GitHub Organization 
+      * Note: repository must be an org repo
     * `allGitHubUsers` which will allow every GitHub user to authenticate <br>&nbsp;
 
 <p align="center">
