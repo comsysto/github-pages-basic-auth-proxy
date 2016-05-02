@@ -19,7 +19,9 @@ Basic Auth checks against GitHub API.
 
 ## Installation on Heroku
 
-![](https://comsysto.github.io/github-pages-basic-auth-proxy/public/beta-warning.svg)
+<p align="center">
+  <img src="https://comsysto.github.io/github-pages-basic-auth-proxy/public/beta-warning.svg" width="90%" />
+</p>
 
 <br>
 
@@ -27,7 +29,11 @@ Basic Auth checks against GitHub API.
 <hr>
 
   * Create a directory with a random name (e.g. a sha256 hash) inside your gh-pages branch. <br>&nbsp;
-  * ![](https://comsysto.github.io/github-pages-basic-auth-proxy/public/urls-and-obfuscator-explained.svg)
+
+<p align="center">
+  <img src="https://comsysto.github.io/github-pages-basic-auth-proxy/public/urls-and-obfuscator-explained.svg" width="90%" />
+</p>
+
 
 <br><br><br><br>
 
